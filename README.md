@@ -232,23 +232,19 @@ OWASP offers that are great hints and series and frameworks that can be leverage
 ### OWASP Projects
 
 - **Flagship**
-<br/>
-The OWASP Flagship destination is given to projects that have demonstrated strategic value to OWASP and application security as a whole
-<br/>
+  The OWASP Flagship destination is given to projects that have demonstrated strategic value to OWASP and application security as a whole
+  <br/>
 
 - **Lab**
-<br/>
-OWASP Labs projects represent projects that have produced a deliverable of value
-<br/>
+  OWASP Labs projects represent projects that have produced a deliverable of value
+  <br/>
 
 - **Incubator**
-<br/>
-OWASP Incubator projects represent the experimental playground where projects are still being fleshed out, ideas are still being proven and development is still underway
-<br/>
+  OWASP Incubator projects represent the experimental playground where projects are still being fleshed out, ideas are still being proven and development is still underway
+  <br/>
 
 - **Low Activity**
-<br/>
-These projects had no release in at least a year. However, have shown to be valuable tools Code [Low Activity] Health Check February 2016
+  These projects had no release in at least a year. However, have shown to be valuable tools Code [Low Activity] Health Check February 2016
 
 ### How to start with OWASP
 
@@ -263,72 +259,72 @@ https://github.com/OWASP/CheatSheetSeries
 Tools:
 
 - Security Shephard
-<br/>
-https://github.com/OWASP/SecurityShephard
+  <br/>
+  https://github.com/OWASP/SecurityShephard
 
 - WebGoat
-<br/>
-https://owasp.org/www-project-webgoat/
+  <br/>
+  https://owasp.org/www-project-webgoat/
 
 - OWASP Juice Shop
-<br/>
-https://owasp.org/www-project-juice-shop/
+  <br/>
+  https://owasp.org/www-project-juice-shop/
 
 - OWASP ZAP (Zed Attack Proxy)
-<br/>
-<https://www.zaproxy.org/>
+  <br/>
+  https://www.zaproxy.org/
 
 - OWTF (Offensive Web Testing Framework)
-<br/>
-<https://owasp.org/www-project-owtf/>
+  <br/>
+  https://owasp.org/www-project-owtf/
 
 - OWASP ASVS
-<br/>
-<https://owasp.org/www-project-application-security-verification-standard/>
+  <br/>
+  https://owasp.org/www-project-application-security-verification-standard/
 
 - Secure Coding Practices Quick Reference Guide
-<br/>
-<https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/>
+  <br/>
+  https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/
 
 - Java HTML Sanitizer
-<br/>
-<https://owasp.org/www-project-java-html-sanitizer/>
+  <br/>
+  https://owasp.org/www-project-java-html-sanitizer/
 
 - CSRF Guard Project
-<br/>
-<https://owasp.org/www-project-csrfguard/>
+  <br/>
+  https://owasp.org/www-project-csrfguard/
 
 - ESAPI
-<br/>
-<https://owasp.org/www-project-enterprise-security-api/>
+  <br/>
+  https://owasp.org/www-project-enterprise-security-api/
 
 - Developers Guide
-<br/>
-<https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/>
+  <br/>
+  https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/
 
 - Security Knowledge Framework
-<br/>
-<https://owasp.org/www-project-security-knowledge-framework/>
+  <br/>
+  https://owasp.org/www-project-security-knowledge-framework/
 
 - OWASP Testing Guide
-<br/>
-<https://owasp.org/www-project-web-security-testing-guide/>
+  <br/>
+  https://owasp.org/www-project-web-security-testing-guide/
 
 - Code Review Guidelines
-<br/>
-<https://owasp.org/www-project-code-reviews-guide/>
+  <br/>
+  https://owasp.org/www-project-code-reviews-guide/
 
 - Dependency Check
-<br/>
-<https://owasp.org/www-project-dependency-check/>
+  <br/>
+  https://owasp.org/www-project-dependency-check/
 
 - Dependency Track
-<br/>
-<https://owasp.org/www-project-dependency-track/>
+  <br/>
+  https://owasp.org/www-project-dependency-track/
 
 - DefectDojo
-<br/>
-<https://owasp.org/www-project-defectdojo/>
+  <br/>
+  https://owasp.org/www-project-defectdojo/
 
 ### SANS 25
 
@@ -348,54 +344,67 @@ https://owasp.org/www-project-juice-shop/
 ### Threat Actors and Definition
 
 - **Confidentiality**
+  <br/>
   Concept of preventing the disclosure of information to unauthorized parties
   <br/>
 
 - **Integrity**
+  <br/>
   Refers to protecting data from unauthorized alteration
   <br/>
 
 - **Availability**
+  <br/>
   Access to systems by authorized personnel can be expressed as the system's availability
   <br/>
 
 - **Authentication**
+  <br/>
   Authentication is the process of determining the identity of a user
   <br/>
 
 - **Authorization**
+  <br/>
   Authorization is the process of applying access control rules to a user process, determining whether or not a particular user process can access an object
   <br/>
 
 - **Accounting (Audit)**
+  <br/>
   Accounting is a means of measuring activity
   <br/>
 
 - **Non-Repudiation**
+  <br/>
   Non-Repudiation is the concept of preventing a subject from denying a previous action with an object in a system
   <br/>
 
 - **Least Privilege**
+  <br/>
   Subject should have only the necessary rights and privileges to perform its current task with no additional rights and privileges
   <br/>
 
 - **Separation of Duties**
+  <br/>
   Ensures that for any given task, more than one individual needs to be involved
   <br/>
 
 - **Defense in Depth**
+  <br/>
   Defense in depth is also known by the terms layered security (or defense) and diversity defense
   <br/>
 
 - **Fail Safe**
+  <br/>
   When a system experiences a failure, it should fail to a safe state (Doors open when there is a power failure)
   <br/>
 
 - **Fail Secure**
+  <br/>
   The default state is locked or secured. So a fail secure lock locks the door when power is removed.
   <br/>
 
 - **Single point of failure**
+  <br/>
   A single point of failure is any aspect of a system that, if it fails, the entire system 
 
 #### Types of attackers
@@ -430,6 +439,7 @@ https://owasp.org/www-project-juice-shop/
 
 ### Identifying Vulnerabilities
 - **CVE (Common Vulnerabilities and Exposure)**
+  <br/>
   https://cve.mitre.org/cve/
 
   - Common Vulnerabiltiies and Exposures is a list of common identifiers for publicly known cyber security vulnerabiltiies
@@ -441,6 +451,7 @@ https://owasp.org/www-project-juice-shop/
     - Industry-endorsed via the CVE Numbering Authorities, CVE Board, and numerous products and services that include CV
 
 - **CVSS (Common Vulnerability Scoring System)**
+  <br/>
   https://nvd.nist.gov/vuln-metrics/cvss
 
   - Common Vulnerability Scoring Sytem provides a way to capture the principal characteristics of a vulnerability and produce a numerical score reflecting its severity. The numerial score can then be translated into a qualitative representation (such as low, medium, high, and critical) to help organisations properly assess and prioritize their vulnerability management processes
@@ -452,6 +463,7 @@ https://owasp.org/www-project-juice-shop/
       https://www.nvd.nist.gov/vuln/detail/CVE-2017-14977
 
 - **CWE (Common Weakness Enumeration)**
+  <br/>
   https://cwe.mitre.org/
 
   - Common Weakness Enumeration is a community-developed list of common software security weaknesses. It serves as a common language, a measuring stick for software security tools, and as a baseline for weakness identification, mitigation, and prevent efforts
@@ -898,7 +910,7 @@ https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/
 - **Patching Process**
 ![Patching Process](image/README/Patching%20Process.PNG)
 
-<hr/>
+
 
 ### Identification and Authentication Failures [# 7]
 https://owasp.org/Top10/A07_2021-Vulnerable_and_Outdated_Components/
@@ -1007,7 +1019,7 @@ https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery/
 
   ![Cross-Site Scripting (2)](image/README/Cross-Site%20Scripting%20(2).PNG)
 
-<hr/>
+
 
 ### Content Security Policy (CSP)
 https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
@@ -1095,9 +1107,8 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
     governs the creation of nested browsing contexts as well as Worker execution contexts
 
 - **Sample**
-![CSP Sample](../../../Downloads/CSP%20Sample.PNG)
+  ![CSP Sample](image/README/CSP%20Sample.PNG)
 
-<hr/>
 
 ### Security Models
 - **Security Models**
@@ -1151,7 +1162,6 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
     <br/>
     The level of confidence that software is free from vulnerabilities, either intentionally designed into the software or accidentally inserted at any time during its lifecycle, and that software functions in the intended manner
 
-<hr/>
 
 ### Software Composition Analysis (SCA)
 - **Software Composition Analysis (SCA)**
@@ -1189,7 +1199,6 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
   ![JFrog](image/README/JFrog.PNG)
   ![JFrog Xray](image/README/JFrog%20Xray.PNG)
 
-<hr/>
 
 ### Security Knowledge Framework
 - **Security Knowledge Framework (SKF)**
@@ -1233,7 +1242,6 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
     <br/>
     https://demo.securityknowledgeframwork.org/
 
-<hr/>
 
 ### Secure Code Review
 - **Who to include**
@@ -1305,7 +1313,9 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 
 ## Session Management
 
-- **Introduction to Session Management**
+### Introduction to Session Management
+
+- **Sessions**
   - A web session is a sequence of network HTTP request and response transactions associated to the same user
   - Modern and complex web applications require the retaining of information or status about each user for the duration of multiple requests
   - Sessions provide the ability to establish variables (such as access rights and localization settings) which will apply to each and every interaction a user has with the web application for the duration of the session
@@ -1360,7 +1370,6 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 
 ![Federated Identity](image/README/Federated%20Identity.PNG)
 
-<hr/>
 
 ### Web Server Session Management
 
@@ -1433,7 +1442,6 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
     </code>
   </pre> 
 
-<hr/>
 
 ### JWT JSON Web Token
 https://jwt.io/
@@ -1510,7 +1518,6 @@ Therefore, a JWT typically looks like the following.
 <br/>
 (xxxxx.yyyyy.zzzzz)
 
-<hr/>
 
 ### OAuth
 https://oauth.net/
@@ -1542,7 +1549,6 @@ https://oauth.net/
   ![OAuth](image/README/OAuth.PNG)
   ![OAuth (2)](image/README/OAuth%20(2).PNG)
 
-<hr/>
 
 ### Open ID
 - **OpenID 1.0 and 2.0**
@@ -1593,6 +1599,8 @@ https://oauth.net/
 <hr/>
 
 ## Risk Rating Methodologies 
+
+## Risk Rating Introduction
 https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
 
 - **When and Why do we risk rate**
@@ -1699,7 +1707,6 @@ https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
   - **Which one to use**
   ![Which one to use](image/README/Which%20one%20to%20use.PNG)
 
-<hr/>
 
 ### Threat Modeling
 Threat Modeling is a structured approach to identify, quantify, and address the security threats and risks associated with an application
