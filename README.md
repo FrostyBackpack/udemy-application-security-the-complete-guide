@@ -348,68 +348,55 @@ https://owasp.org/www-project-juice-shop/
 ### Threat Actors and Definition
 
 - **Confidentiality**
-<br/>
-Concept of preventing the disclosure of information to unauthorized parties
-<br/>
+  Concept of preventing the disclosure of information to unauthorized parties
+  <br/>
 
 - **Integrity**
-<br/>
-Refers to protecting data from unauthorized alteration
-<br/>
+  Refers to protecting data from unauthorized alteration
+  <br/>
 
 - **Availability**
-<br/>
-Access to systems by authorized personnel can be expressed as the system's availability
-<br/>
+  Access to systems by authorized personnel can be expressed as the system's availability
+  <br/>
 
 - **Authentication**
-<br/>
-Authentication is the process of determining the identity of a user
-<br/>
+  Authentication is the process of determining the identity of a user
+  <br/>
 
 - **Authorization**
-<br/>
-Authorization is the process of applying access control rules to a user process, determining whether or not a particular user process can access an object
-<br/>
+  Authorization is the process of applying access control rules to a user process, determining whether or not a particular user process can access an object
+  <br/>
 
 - **Accounting (Audit)**
-<br/>
-Accounting is a means of measuring activity
-<br/>
+  Accounting is a means of measuring activity
+  <br/>
 
 - **Non-Repudiation**
-<br/>
-Non-Repudiation is the concept of preventing a subject from denying a previous action with an object in a system
-<br/>
+  Non-Repudiation is the concept of preventing a subject from denying a previous action with an object in a system
+  <br/>
 
 - **Least Privilege**
-<br/>
-Subject should have only the necessary rights and privileges to perform its current task with no additional rights and privileges
-<br/>
+  Subject should have only the necessary rights and privileges to perform its current task with no additional rights and privileges
+  <br/>
 
 - **Separation of Duties**
-<br/>
-Ensures that for any given task, more than one individual needs to be involved
-<br/>
+  Ensures that for any given task, more than one individual needs to be involved
+  <br/>
 
 - **Defense in Depth**
-<br/>
-Defense in depth is also known by the terms layered security (or defense) and diversity defense
-<br/>
+  Defense in depth is also known by the terms layered security (or defense) and diversity defense
+  <br/>
 
 - **Fail Safe**
-<br/>
-When a system experiences a failure, it should fail to a safe state (Doors open when there is a power failure)
-<br/>
+  When a system experiences a failure, it should fail to a safe state (Doors open when there is a power failure)
+  <br/>
 
 - **Fail Secure**
-<br/>
-The default state is locked or secured. So a fail secure lock locks the door when power is removed.
-<br/>
+  The default state is locked or secured. So a fail secure lock locks the door when power is removed.
+  <br/>
 
 - **Single point of failure**
-<br/>
-A single point of failure is any aspect of a system that, if it fails, the entire system 
+  A single point of failure is any aspect of a system that, if it fails, the entire system 
 
 #### Types of attackers
 
@@ -443,7 +430,7 @@ A single point of failure is any aspect of a system that, if it fails, the entir
 
 ### Identifying Vulnerabilities
 - **CVE (Common Vulnerabilities and Exposure)**
-https://cve.mitre.org/cve/
+  https://cve.mitre.org/cve/
 
   - Common Vulnerabiltiies and Exposures is a list of common identifiers for publicly known cyber security vulnerabiltiies
   
@@ -454,7 +441,7 @@ https://cve.mitre.org/cve/
     - Industry-endorsed via the CVE Numbering Authorities, CVE Board, and numerous products and services that include CV
 
 - **CVSS (Common Vulnerability Scoring System)**
-https://nvd.nist.gov/vuln-metrics/cvss
+  https://nvd.nist.gov/vuln-metrics/cvss
 
   - Common Vulnerability Scoring Sytem provides a way to capture the principal characteristics of a vulnerability and produce a numerical score reflecting its severity. The numerial score can then be translated into a qualitative representation (such as low, medium, high, and critical) to help organisations properly assess and prioritize their vulnerability management processes
    
@@ -465,7 +452,7 @@ https://nvd.nist.gov/vuln-metrics/cvss
       https://www.nvd.nist.gov/vuln/detail/CVE-2017-14977
 
 - **CWE (Common Weakness Enumeration)**
-https://cwe.mitre.org/
+  https://cwe.mitre.org/
 
   - Common Weakness Enumeration is a community-developed list of common software security weaknesses. It serves as a common language, a measuring stick for software security tools, and as a baseline for weakness identification, mitigation, and prevent efforts
   
@@ -526,10 +513,10 @@ This allows for a modular approach to building an overall application.
 
 For instance, JavaScript has APIs available that are built on top of the base language that allow the developer to integrate additional functionality:
 - **Browser APIs**
-Built into the browser, these expose data from the browser and environment that the browser is running in
+  Built into the browser, these expose data from the browser and environment that the browser is running in
 
 - **3rd Party APIs**
-These are APIs that are pulled in from external sources that allow you to retrieve data and functionality from that 3rd party 
+  These are APIs that are pulled in from external sources that allow you to retrieve data and functionality from that 3rd party 
 
 **Difference between APIs and Standard application**
 ![APIs vs Standard App](image/README/APIs%20vs%20Standard%20App.PNG)
@@ -546,12 +533,10 @@ These are APIs that are pulled in from external sources that allow you to retrie
 
 ##### Broken Object Level Authorization
 -  **Definition**
-<br/>
-Attacker substitutes ID of their resource in API call with an ID of a resource belonging to another user. Lack of proper authorization checks allows access. This attack is also known as IDOR (Insecure Direct Object Reference)
+  Attacker substitutes ID of their resource in API call with an ID of a resource belonging to another user. Lack of proper authorization checks allows access. This attack is also known as IDOR (Insecure Direct Object Reference)
 
 - **Example**
-<br/>
-An API that allows for an attacker to replace parameters in the URL that allows the attackers to have access to an API that they should not have access to. The API is not checking permissions and lets the call through.
+  An API that allows for an attacker to replace parameters in the URL that allows the attackers to have access to an API that they should not have access to. The API is not checking permissions and lets the call through.
 
 - **Prevention**
   - Implement access checks on every call
@@ -560,12 +545,10 @@ An API that allows for an attacker to replace parameters in the URL that allows 
 
 ##### Broken Authentication
 -  **Definition**
-<br/>
-Poorly implemented API authentication allowing attackers to assume other users' identities.
+  Poorly implemented API authentication allowing attackers to assume other users' identities.
 
 - **Example**
-<br/>
-Unprotected APIs, weak authentication, not rotating or reusing API keys, poor password usage, lack of token validation and weak handling
+  Unprotected APIs, weak authentication, not rotating or reusing API keys, poor password usage, lack of token validation and weak handling
 
 - **Prevention**
   - Check all authentication methods and use standard authentication, token generation/management, password storage, and MFA
@@ -575,12 +558,10 @@ Unprotected APIs, weak authentication, not rotating or reusing API keys, poor pa
 
 ##### Excessive Data Exposure
 -  **Definition**
-<br/>
-API exposing a lot more data than the client legitimately needs, relying on the client to do the filtering. Attacker goes directly to the API and has it all.
+  API exposing a lot more data than the client legitimately needs, relying on the client to do the filtering. Attacker goes directly to the API and has it all.
 
 - **Example**
-<br/>
-Returning full data objects from the database or allowing for direct access to sensitive data.
+  Returning full data objects from the database or allowing for direct access to sensitive data.
 
 - **Prevention**
   - Never rely on the client to filter data, and tailor API responses to the needs of the consumer. Ensure that there is a need-to-know for any PII returned
@@ -588,24 +569,20 @@ Returning full data objects from the database or allowing for direct access to s
 
 ##### Lack of Resource and Rate Limiting
 -  **Definition**
-<br/>
-API is not protected against an excessive amount of calls or payload sizes. Attackers use that for DoS and brute force attacks.
+  API is not protected against an excessive amount of calls or payload sizes. Attackers use that for DoS and brute force attacks.
 
 - **Example**
-<br/>
-Attacker performs a DDoS or otherwise overwhelms the API.
+  Attacker performs a DDoS or otherwise overwhelms the API.
 
 - **Prevention**
   - Include rate limting, payload size limits, check compression ratios, and limit container resources
 
 ##### Broken Function Level Authorization
 -  **Definition**
-<br/>
-API relies on client to use user level or admin level APIs. Attacker figures out the "hidden" admin API methods and invokes them directly.
+  API relies on client to use user level or admin level APIs. Attacker figures out the "hidden" admin API methods and invokes them directly.
 
 - **Example**
-<br/>
-Administrative functions that are exposed to non-admin users.
+  Administrative functions that are exposed to non-admin users.
 
 - **Prevention**
   - Deny all access by default and build permissions from there based on specific roles
@@ -613,12 +590,10 @@ Administrative functions that are exposed to non-admin users.
 
 ##### Mass Assignment
 -  **Definition**
-<br/>
-The API takes data that client provides and stores it without proper filtering for allow-listed properties.
+  The API takes data that client provides and stores it without proper filtering for allow-listed properties.
 
 - **Example**
-<br/>
-Payload received from the client is blindly transformed into an object and stored.
+  Payload received from the client is blindly transformed into an object and stored.
 
 - **Prevention**
   - Do not automatically bind incoming data without validating it first through an explicit list of parameters and payloads that you are expecting
@@ -627,12 +602,10 @@ Payload received from the client is blindly transformed into an object and store
 
 ##### Security Misconfiguration
 -  **Definition**
-<br/>
-Poor configuration of the APIs servers allows attackers to exploit them.
+  Poor configuration of the APIs servers allows attackers to exploit them.
 
 - **Example**
-<br/>
-Numerous issues like unpatched systems, overexposed files and directories, missing or outdated configuration, exposed systems and unused features, verbose error messaging.
+  Numerous issues like unpatched systems, overexposed files and directories, missing or outdated configuration, exposed systems and unused features, verbose error messaging.
 
 - **Prevention**
   - Use of hardened images and secure default configuration
@@ -641,12 +614,10 @@ Numerous issues like unpatched systems, overexposed files and directories, missi
 
 ##### Injection
 -  **Definition**
-<br/>
-Attacker constructs API calls that include SQL-, NoSQL-, LDAP-, OS- and other commands that the API or backend behind it blindly executes.
+  Attacker constructs API calls that include SQL-, NoSQL-, LDAP-, OS- and other commands that the API or backend behind it blindly executes.
 
 - **Example**
-<br/>
-SQL, LDAP, OS, XML injection
+  SQL, LDAP, OS, XML injection
 
 - **Prevention**
   - Never trust end-user input
@@ -655,12 +626,10 @@ SQL, LDAP, OS, XML injection
 
 ##### Improper Assets Management
 -  **Definition**
-<br/>
-Attacker finds non-production versions of the API: such as staging, testing, beta or earlier versions - that are not as well protected and uses those to launch the attack.
+  Attacker finds non-production versions of the API: such as staging, testing, beta or earlier versions - that are not as well protected and uses those to launch the attack.
 
 - **Example**
-<br/>
-Backwards compatibility can leave legacy systems exposed. Old and non-production versions can be poorly maintained yet still have access to production data. These also allow for lateral movement in the system.
+  Backwards compatibility can leave legacy systems exposed. Old and non-production versions can be poorly maintained yet still have access to production data. These also allow for lateral movement in the system.
 
 - **Prevention**
   - Properly inventory your systems and APIs
@@ -670,17 +639,17 @@ Backwards compatibility can leave legacy systems exposed. Old and non-production
 
 ##### Insufficent Logging and Monitoring
 -  **Definition**
-<br/>
-Lack of proper logging, monitoring, and alerting let attacks go unnoticed.
+  Lack of proper logging, monitoring, and alerting let attacks go unnoticed.
 
 - **Example**
-<br/>
-Logging and alerts go unnoticed or are not responded to. Logs are not protected against tampering and are not integrated into a centralized logging system like a SIEM.
+  Logging and alerts go unnoticed or are not responded to. Logs are not protected against tampering and are not integrated into a centralized logging system like a SIEM.
 
 - **Prevention**
   - Properly log sensitive workflows like failed login attempts, input validation failures, and failures in security policy checks
   - Ensure logs are formatted so that they can be imported in a centralized tool. Logs also need to be protected from tampering and exposure to unauthorized users
   - Integrate logs with monitoring and alerting tools
+
+<hr/>
 
 ## Dive into OWASP Top 10
 
@@ -767,7 +736,7 @@ https://owasp.org/Top10/A02_2021-Cryptographic_Failures/
 https://owasp.org/Top10/A03_2021-Injection/
 
 - **Injection**
-Anytime user input changes the intended behaviour of the system
+  Anytime user input changes the intended behaviour of the system
 
 - **How does it happen**
   - Trust of user input without validating, filtering, or sanitizing
@@ -786,25 +755,25 @@ Anytime user input changes the intended behaviour of the system
   - Remove data
 
 - **Example (SQLI)**
-An application uses untrusted data in the construction of the following vulnerable SQL call:
-<pre>
-  <code>
-    String query = "SELECT \* FROM accounts WHERE custID = " + request.getParameter("id") + "";
-  </code>
-</pre>
+  An application uses untrusted data in the construction of the following vulnerable SQL call:
+  <pre>
+    <code>
+      String query = "SELECT \* FROM accounts WHERE custID = " + request.getParameter("id") + "";
+    </code>
+  </pre>
 
-Similarly, an application's blind trust in frameworks may result in queries that are still vulnerable (e.g. Hibernate Query Language (HQL))
-<pre>
-  <code>
-    Query HQLQuery = session.createQuery("FROM accounts WHERE custID=" + request.getParamter("id") + "");
-  </code>
-</pre>
+  Similarly, an application's blind trust in frameworks may result in queries that are still vulnerable (e.g. Hibernate Query Language (HQL))
+  <pre>
+    <code>
+      Query HQLQuery = session.createQuery("FROM accounts WHERE custID=" + request.getParamter("id") + "");
+    </code>
+  </pre>
 
-In both cases, the attacker modifies the "id" parameter value in their browser to send: ' or 'I'='I
+  In both cases, the attacker modifies the "id" parameter value in their browser to send: ' or 'I'='I
 
-For instance: http://example.com/app/accountView?id=' or 'I'='I
+  For instance: http://example.com/app/accountView?id=' or 'I'='I
 
-This changes the meaning of both queries to return all the records from the accounts table. More dangerous attacks could modify or delete data or even invoke stored procedures
+  This changes the meaning of both queries to return all the records from the accounts table. More dangerous attacks could modify or delete data or even invoke stored procedures
 
 - **Other Injection Flaws**
   - **OS Command**
@@ -929,11 +898,13 @@ https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/
 - **Patching Process**
 ![Patching Process](image/README/Patching%20Process.PNG)
 
+<hr/>
+
 ### Identification and Authentication Failures [# 7]
 https://owasp.org/Top10/A07_2021-Vulnerable_and_Outdated_Components/
 
 - **How can Authentication be broken**
-![Broken Authentication](image/README/Broken%20Authentication.PNG)
+  ![Broken Authentication](image/README/Broken%20Authentication.PNG)
 
 - **Attacks**
   - Password guessing attack (social engineering)
@@ -961,10 +932,10 @@ https://owasp.org/Top10/A07_2021-Vulnerable_and_Outdated_Components/
 https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/
 
 - **Software Integrity Failures**
-![Software Integrity Failures](image/README/Software%20Integrity%20Failures.PNG)
+  ![Software Integrity Failures](image/README/Software%20Integrity%20Failures.PNG)
 
 - **Software Integrity Prevention**
-![Software Integrity Prevention](image/README/Software%20Integrity%20Prevention.PNG)
+  ![Software Integrity Prevention](image/README/Software%20Integrity%20Prevention.PNG)
 
 - **Example**
   - SolarWinds malicious update: Nation-states have been known to attack update mechanisms, with a recent notable attack being the SolarWinds Orion attack. The company that develops the software had secure build and update integrity processes. Still, these were able to be subverted, and for several months, the firm distributed a highly targeted malicious update to more than 18,000 organisations, of which around 100 or so were affected. This is one of the most far-reaching and most significant breaches of this nature in history
@@ -996,7 +967,7 @@ https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/
     - Establish or adopt an incident response and recovery plan
 
 - **SIEM (Security Information and Event Management)**
-![SIEM](image/README/SIEM.PNG)
+  ![SIEM](image/README/SIEM.PNG)
 
 ### Server-Side Request Forgery (SSRF) [# 10]
 https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery/
@@ -1023,6 +994,8 @@ https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery/
   - Compromise internal services
     - The attacker can abuse internal services to conduct further attacks such as Remote Code Execution (RCE) or Denial of Service (Do)
 
+<hr/>
+
 ## Defense and Tools
 
 ### Cross Site Scripting 
@@ -1033,6 +1006,8 @@ https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery/
   ![Cross-Site Scripting](image/README/Cross-Site%20Scripting.PNG)
 
   ![Cross-Site Scripting (2)](image/README/Cross-Site%20Scripting%20(2).PNG)
+
+<hr/>
 
 ### Content Security Policy (CSP)
 https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
@@ -1122,6 +1097,8 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 - **Sample**
 ![CSP Sample](../../../Downloads/CSP%20Sample.PNG)
 
+<hr/>
+
 ### Security Models
 - **Security Models**
   - Security models are used to understand the systems and processes developed to enforce security principles
@@ -1174,6 +1151,8 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
     <br/>
     The level of confidence that software is free from vulnerabilities, either intentionally designed into the software or accidentally inserted at any time during its lifecycle, and that software functions in the intended manner
 
+<hr/>
+
 ### Software Composition Analysis (SCA)
 - **Software Composition Analysis (SCA)**
   - SCA is the process of validating that the components, libraries and opensource software that is used in an application is free from known vulnerabilities and license compliance
@@ -1196,19 +1175,21 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
   - A report is generated and can be used to identify the dependencies as well as understand the mitigation (In mos t cases, the mitigation is to use the most up to date level of software)
 
 - **National Vulnerability Database**
-https://nvd.nist.gov/
+  https://nvd.nist.gov/
 
   - The NVD is the U.S government repository of standards based vulnerability mmanagement data represented using Security Content Automation Protocol (SCAP) This data enables automation of vulnerability management, security measurement, and compliance
   - The NVD includes databases of security checklist references, security related software flaws, misconfigurations, product names and impact metrics
   
-![NVD](image/README/NVD.PNG)
+  ![NVD](image/README/NVD.PNG)
 
-- **Sample**
-![Dependency Check](image/README/Dependency%20Check.PNG)
+  - **Sample**
+  ![Dependency Check](image/README/Dependency%20Check.PNG)
 
-- **JFrog Xray**
-![JFrog](image/README/JFrog.PNG)
-![JFrog Xray](image/README/JFrog%20Xray.PNG)
+  - **JFrog Xray**
+  ![JFrog](image/README/JFrog.PNG)
+  ![JFrog Xray](image/README/JFrog%20Xray.PNG)
+
+<hr/>
 
 ### Security Knowledge Framework
 - **Security Knowledge Framework (SKF)**
@@ -1251,6 +1232,8 @@ https://nvd.nist.gov/
   - Demo Site 
     <br/>
     https://demo.securityknowledgeframwork.org/
+
+<hr/>
 
 ### Secure Code Review
 - **Who to include**
@@ -1318,32 +1301,33 @@ https://nvd.nist.gov/
   - https://owasp.org/SecureCodingDogo/codereview101/
   - https://owasp.org/images/5/53/OWASP_Code_Review_Guide_v2.pdf
 
+<hr/>
+
 ## Session Management
 
-### Introduction to Session Management
-- **Sessions**
+- **Introduction to Session Management**
   - A web session is a sequence of network HTTP request and response transactions associated to the same user
   - Modern and complex web applications require the retaining of information or status about each user for the duration of multiple requests
   - Sessions provide the ability to establish variables (such as access rights and localization settings) which will apply to each and every interaction a user has with the web application for the duration of the session
 
- Web applications can create sessions to keep track of anonymous users after the very first user request
-  -  An example would be maintaining the user language preference
+  Web applications can create sessions to keep track of anonymous users after the very first user request
+    - An example would be maintaining the user language preference
   
-Additionally, web applications will make use of sessions once the user has authenticated
-  - This ensures the ability to identify the user on any subsequent requests as well as being able to apply security access controls, authorized access to the user private data, and to increase the usability of the application
+  Additionally, web applications will make use of sessions once the user has authenticated
+    - This ensures the ability to identify the user on any subsequent requests as well as being able to apply security access controls, authorized access to the user private data, and to increase the usability of the application
  
-Therefore, current web applications can provide session capabilities **both pre and post authentication**
+  Therefore, current web applications can provide session capabilities **both pre and post authentication**
 
-Once an authenticated session has been established, the session ID (or token) is temporarily equivalent to the strongest authentication method used by the application
-  - such as username and password, passphrases, one-time passwords (OTP), client-based digital certificates, smartcards, or biometrics (such as fingerprint or eye retina)
+  Once an authenticated session has been established, the session ID (or token) is temporarily equivalent to the strongest authentication method used by the application
+    - such as username and password, passphrases, one-time passwords (OTP), client-based digital certificates, smartcards, or biometrics (such as fingerprint or eye retina)
 
-HTTP is a stateless protocol where each request and response pair is independent of other web interactions.
+  HTTP is a stateless protocol where each request and response pair is independent of other web interactions.
 
-Session management links both the authentication and authorization modules commonly available in web applications:
-- The session ID or token binds the user authentication credentials to the user HTTP traffic and the appropriate access controls enforced by the web application
-- The complexity of these components in modern web applications, plus the fact that its implementation and binding resides on the web developer's hands makes the implementation of a secure session management module very challenging
+  Session management links both the authentication and authorization modules commonly available in web applications:
+    - The session ID or token binds the user authentication credentials to the user HTTP traffic and the appropriate access controls enforced by the web application
+    - The complexity of these components in modern web applications, plus the fact that its implementation and binding resides on the web developer's hands makes the implementation of a secure session management module very challenging
 
-![Session Management](image/README/Session%20Management.PNG)
+  ![Session Management](image/README/Session%20Management.PNG)
 
 - Since HTTP and Web Server both are stateless, the only way to maintain a session is when some unique information about the session (session id) is passed between server and client in every request and response
 - Methods of Session Management:
@@ -1569,44 +1553,44 @@ https://oauth.net/
     - Neither services nor the OpenID standard may mandate a specific means by which to authenticate users, allowing for approaches ranging from the common (such as passwords) to the novel (such as smart cards or biometrics)
 
 - **OpenID**
-<br/>
-https://openid.net/
+  https://openid.net/
 
-OpenID allows you to use an existing account to sign into multiple websites, without needing to create new passwords
-<br/><br/>
-You may choose to associate information with your OpenID that can be shared with the websites you visit, such as a name or email address
-<br/><br/>
-With OpenID, your password is only given to your identity provider, and that provider then confirms your identity to the websites you visit. Other than your provider, no website ever sees your password
+  OpenID allows you to use an existing account to sign into multiple websites, without needing to create new passwords
+  <br/><br/>
+  You may choose to associate information with your OpenID that can be shared with the websites you visit, such as a name or email address
+  <br/><br/>
+  With OpenID, your password is only given to your identity provider, and that provider then confirms your identity to the websites you visit. Other than your provider, no website ever sees your password
 
 - **OpenID Authentication**
-The end-user interacts with a relying party (such as website) that provides an option to specify an OpenID for purposes of authentication
-<br/><br/>
-The relying party and the OpenID provider establish a shared secret, which the relying party then stores
-<br/><br/>
-The relying party redirects the end-user's user-agent to the OpenID provider so the end-user can authenticate directly with the OpenID provider
-<br/><br/>
-If the end-user accepts the OpenID provider's request to trust the relying party, then the user-agent is redirected back to the relying party
+  The end-user interacts with a relying party (such as website) that provides an option to specify an OpenID for purposes of authentication
+  <br/><br/>
+  The relying party and the OpenID provider establish a shared secret, which the relying party then stores
+  <br/><br/>
+  The relying party redirects the end-user's user-agent to the OpenID provider so the end-user can authenticate directly with the OpenID provider
+  <br/><br/>
+  If the end-user accepts the OpenID provider's request to trust the relying party, then the user-agent is redirected back to the relying party
 
 ![OpenID Authentication](image/README/OpenID%20Authentication.PNG)
 
 - **OAuth and OpenID Connect**
-<br/>
-OAuth is directly related to OpenID Connect (OIDC) since OIDC is an authentication layer built on top of OAuth 2.0. OAuth is also distinct from XACML, which is an authentication policy standard
-<br/><br/>
-OAuth can be used in conjunction with XACML where OAuth is used for ownership consent and access delegation whereas XACML is used to define the authorization policies (e.g. managers can view documents in their region)
+  OAuth is directly related to OpenID Connect (OIDC) since OIDC is an authentication layer built on top of OAuth 2.0. OAuth is also distinct from XACML, which is an authentication policy standard
+  <br/><br/>
+  OAuth can be used in conjunction with XACML where OAuth is used for ownership consent and access delegation whereas XACML is used to define the authorization policies (e.g. managers can view documents in their region)
 
 - **OpenID Connect**
-https://developers.google.com/identity/protocols/oauth2/openid-connect
+  https://developers.google.com/identity/protocols/oauth2/openid-connect
 
-OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol
-<br/><br/>
-It allows Clients to verify the identity of the End-User based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the End-User in an interoperable and REST-like manner
-<br/><br/>
-OpenID Connect allows clients of all types, including Web-based, mobile and JavaScript clients, to request and receive information about authenicated sessions and end-users
-<br/><br/>
-The specification suite is extensible, allowing participants to use optional features such as encryption of identity data, discovery of OpenID Providers, and session management, when it makes sense for them
+  OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol
+  <br/><br/>
+  It allows Clients to verify the identity of the End-User based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the End-User in an interoperable and REST-like manner
+  <br/><br/>
+  OpenID Connect allows clients of all types, including Web-based, mobile and JavaScript clients, to request and receive information about authenicated sessions and end-users
+  <br/><br/>
+  The specification suite is extensible, allowing participants to use optional features such as encryption of identity data, discovery of OpenID Providers, and session management, when it makes sense for them
 
-![OpenID Connect](image/README/OpenID%20Connect.PNG)
+  ![OpenID Connect](image/README/OpenID%20Connect.PNG)
+
+<hr/>
 
 ## Risk Rating Methodologies 
 https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
@@ -1616,8 +1600,7 @@ https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
   - The goal of risk rating is to identity the risk to the system and business in order to put a plan in place to address the risk through prioritization
 
 - **OWASP Risk Rating**
-<br/>
-RISK = LIKELIHOOD * IMPACT
+  RISK = LIKELIHOOD * IMPACT
 
 - **Risk Rating Method**
 ![Risk Rating Method](image/README/Risk%20Rating%20Method.PNG)
@@ -1655,20 +1638,20 @@ RISK = LIKELIHOOD * IMPACT
 
   - Factors
     - **Technical Impact**
-    <br/>
-    Technical impact can be broken down into factors aligned with the traditonal security areas of concern: confidentiality, integrity, availability and accountability. The goal is to estimate the magnitude of the impact **on the system** if the vulnerability were to be exploited
-      - Loss of confidentiality (How much data could be disclosed and how sensitive is it?)
-      - Loss of integrity (How much data could be corrupted and how damaged is it?)
-      - Loss of availability (How much service could be lost and how vital is it?)
-      - Loss of accountability (Are the threat agents' actions traceable to an individual?)
+      <br/>
+      Technical impact can be broken down into factors aligned with the traditonal security areas of concern: confidentiality, integrity, availability and accountability. The goal is to estimate the magnitude of the impact **on the system** if the vulnerability were to be exploited
+        - Loss of confidentiality (How much data could be disclosed and how sensitive is it?)
+        - Loss of integrity (How much data could be corrupted and how damaged is it?)
+        - Loss of availability (How much service could be lost and how vital is it?)
+        - Loss of accountability (Are the threat agents' actions traceable to an individual?)
 
     - **Business Impact**
-    <br/>
-    Business impact stems from the technical impact but requires a deep understanding of **what is important to the company running the application**. In general, you should be aiming to support your risks with business impact, particularly if your audience is executive level. The business risk is what justifies investment in fixing security problems
-      - Financial damage (How much financial damage will result from an exploit?)
-      - Reputation damage (Would an exploit result in reputation damage that would harm the business?)
-      - Non-compliance (How much exposure does non-compliance introduce?)
-      - Privacy violation (How much personally identifiable information could be disclosed?)
+      <br/>
+      Business impact stems from the technical impact but requires a deep understanding of **what is important to the company running the application**. In general, you should be aiming to support your risks with business impact, particularly if your audience is executive level. The business risk is what justifies investment in fixing security problems
+        - Financial damage (How much financial damage will result from an exploit?)
+        - Reputation damage (Would an exploit result in reputation damage that would harm the business?)
+        - Non-compliance (How much exposure does non-compliance introduce?)
+        - Privacy violation (How much personally identifiable information could be disclosed?)
 
   **4. Determine the severity of the risk**
   <br/>
