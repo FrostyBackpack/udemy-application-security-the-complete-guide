@@ -1128,7 +1128,8 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
   - Three key elements play a role in systems with respect to model implementation: People, Processes, Technology
   - Addressing a single element of the three may provide benefits, but more effectiveness can be achieved through addressing multiple elements
   - How security models are used in an OS design:
-     ![Security Model](image/README/Security%20Model.PNG)
+    <br/>
+    ![Security Model](image/README/Security%20Model.PNG)
 
 - **Access Control Models**
   - **Access Control List (ACL)**
@@ -1266,22 +1267,23 @@ https://nvd.nist.gov/
 4. When changes are required to the threat model due to findings during that code review, the threat model should be updated
 
 - **Understand the risk**
-![Understand the risk](image/README/Understand%20the%20risk.PNG)
+  <br/>
+  ![Understand the risk](image/README/Understand%20the%20risk.PNG)
 
-- When considering the risk of code under review, consider some common criteria for establishing risk of a particular code module. The higher the risk, the more thorough the review should be
-  - Application features and business logic
-  - Context/Sensitive Data
-  - The code (language, feature, nuance of language)
-  - User roles and access rights (anonymous access?)
-  - Application type (mobile, desktop, Web)
-  - Design and architecture of the application
-  - Company standards, guidelines and requirements that apply
+  - When considering the risk of code under review, consider some common criteria for establishing risk of a particular code module. The higher the risk, the more thorough the review should be
+    - Application features and business logic
+    - Context/Sensitive Data
+    - The code (language, feature, nuance of language)
+    - User roles and access rights (anonymous access?)
+    - Application type (mobile, desktop, Web)
+    - Design and architecture of the application
+    - Company standards, guidelines and requirements that apply
 
-- The reviewer will need certain information about the development in order to be effective
-  - Design documents, business requirements, functional specifications, test results and the like
-  
-- If the reviewer is not part of the development team, they need to talk with developers and the lead architect for the application and get a sense of the application
-  - Does not have to be a long meeting, it could be a whiteboard session for the development team to share some basic information about the key security considerations and controls
+  - The reviewer will need certain information about the development in order to be effective
+    - Design documents, business requirements, functional specifications, test results and the like
+    
+  - If the reviewer is not part of the development team, they need to talk with developers and the lead architect for the application and get a sense of the application
+    - Does not have to be a long meeting, it could be a whiteboard session for the development team to share some basic information about the key security considerations and controls
 
 - **Information Gathering Tips**
   - Walkthrough of the actual running application
@@ -1301,7 +1303,7 @@ https://nvd.nist.gov/
     Pre-commit: Code review during pre-commit means that dangerous or sub-par code does not make it to the code branch. However, this does reduce the time to delivery of new code
 
   - **Post**
-    <br/>  
+    <br/> 
     Post-commit: This allows for faster delivery of software but runs the risk of allowing dangerous code into the branch. Other developers may also add their code which can make future reviews more cumbersome
 
   - **Audit**
@@ -1309,7 +1311,8 @@ https://nvd.nist.gov/
     During a code audit: This can be triggered by an event such as a found vulnerability and should review the entire area of concern rather than focus on a single code commit
 
 - **What to do with results**
-A vulnerability or risk found during a code review should be addressed immediately if found in the pre-commit phase. However, there may be cases when code cannot be mitigated, or issues are found after code has been committed. In those cases, go through a Risk Rating to determine its impact and undestand the timeframe for remediation.
+  <br/>
+  A vulnerability or risk found during a code review should be addressed immediately if found in the pre-commit phase. However, there may be cases when code cannot be mitigated, or issues are found after code has been committed. In those cases, go through a Risk Rating to determine its impact and undestand the timeframe for remediation.
 
 - **OWASP Secure Code Review**
   - https://owasp.org/SecureCodingDogo/codereview101/
@@ -1364,14 +1367,16 @@ Session management links both the authentication and authorization modules commo
 1. A federated identity in information technology is the means of linking a person's electronic identity and attributes, stored across multiple distinct **identity management** systems
 2. Federated identity is related to single sign-on (SSO), in which a user's single authentication ticket, or token, is trusted across multiple IT systems or even organisations
 3. The "federation" of identity describes the technologies, standards and use-cases which serve to enable the portability of identity information across otherwise autonomous security domains
- - Technologies:
-   - Security Assertion Markup Language (SAML)
-   - OAuth
-   - OpenID
-   - Security Tokens (Simple Web Tokens, JSON Web Tokens and SAML assertions)
-   - Web Service Specifications and Windows Identity Foundation
+   - Technologies:
+     - Security Assertion Markup Language (SAML)
+     - OAuth
+     - OpenID
+     - Security Tokens (Simple Web Tokens, JSON Web Tokens and SAML assertions)
+     - Web Service Specifications and Windows Identity Foundation
 
 ![Federated Identity](image/README/Federated%20Identity.PNG)
+
+<hr/>
 
 ### Web Server Session Management
 
@@ -1381,12 +1386,12 @@ Session management links both the authentication and authorization modules commo
 - **Java Session Management (HTTPSession)**
  - Servlet API provides Session management through HttpSession interface. We can get session from HttpServletRequest object using following methods. HttpSession allows us to set objects as attributes that can be retrieved in future requests.
    - HttpSession getSession()
-    <br/>
-    This method always returns a HttpSession object. It returns the session object attached with the request, if the request has no session attached, then it creates a new session and return it
+      <br/>
+      This method always returns a HttpSession object. It returns the session object attached with the request, if the request has no session attached, then it creates a new session and return it
 
    - HttpSession getSession(boolean flag)
-    <br/>
-    This method returns HttpSession object if request has session else it returns null
+      <br/>
+      This method returns HttpSession object if request has session else it returns null
 
   - When HttpServletRequest getSession() does not return an active session, then it creates the new HttpSession object and adds a Cookie to the response obejct with name JSESSIONID and value as session id
   - This cookie is used to identify the HttpSession object in further requests from client
@@ -1399,7 +1404,8 @@ Session management links both the authentication and authorization modules commo
   - **However**: there is a clear security concern with the session in the URL
 
 - **.NET Sessions Management**
-![.NET Session Management](image/README/.NET%20Session%20Management.PNG)   
+  <br/>
+  ![.NET Session Management](image/README/.NET%20Session%20Management.PNG)   
 
 - .NET session state supports several different storage options for session data. Each option is identified by a value in the SessionStateMode enumeration. The following list describes the available session state modes:
   - You can specify which mode you want .NET session state to use by assigning a SessionStateMode enumeration values to the **mode** attribute of the sessionState element in your application's Web.config file. Modes other than **InProc** and **Off** require additional parameters, such as connection-string values
@@ -1418,30 +1424,32 @@ Session management links both the authentication and authorization modules commo
 - **State Server Mode**
   - **StateServer** mode stores session state in a process, referred to as the ASP.NET state service, that is separate from the ASP.NET worker process or IIS application pool. Using this mode ensures that session state is preserved if the Web application is restarted and also makes session state available to multiple Web servers in a Web farm
   - To improve the security of your application when using StateServer mode, it is recommended that you protect your stateConnectionString value by encrypting the sessionState section of your configuration file
-  - <pre>
-      <code>
-        <sessionState mode="StateServer" stateConnectionString="tcpip=SampleStateServer:42424" cookieless="false" timeout="20"/>
-      </code>
-    </pre> 
+  <pre>
+    <code>
+      <sessionState mode="StateServer" stateConnectionString="tcpip=SampleStateServer:42424" cookieless="false" timeout="20"/>
+    </code>
+  </pre> 
 
 - **SQL Server Mode**
   - **SQLServer** mode stores session state in a SQL Server database. Using this mode ensures that session state is preserved if the Web application is restarted and also makes session state available to multiple Web servers in a Web farm
   - To use SQLServer mode, you must first be sure the ASP.NET session state database is installed on SQL Server
-  - <pre>
-      <code>
-        <sessionState mode="SQLServer" sqlConnectionString="Integrated Security=SSPI;datasource=SampleSqlServer;"/>
-      </code>
-    </pre> 
+  <pre>
+    <code>
+      <sessionState mode="SQLServer" sqlConnectionString="Integrated Security=SSPI;datasource=SampleSqlServer;"/>
+    </code>
+  </pre> 
 
 - **Custom Mode**
   - **Custom** mode specifies that you want to store session state data using a custom session state store provider. When you configure your .NET application with a Mode of Custom, you must specify the type of the session state store provider using the providers sub-element of the sessionState configuration element. You specify the provider type using an add sub-element and include both a type attribute that specifies the provider's type name and a name attribute that specifies the provider instance name
-  - <pre>
-      <code>
-        <providers>
-          <add name="OdbcSessionProvider" type="Samples.AspNet.Session.OdbcSessionStateStore" connectionStringName="OdbcSessionServices" writeExceptionsToEventLog="false" />
-        </providers>
-      </code>
-    </pre> 
+  <pre>
+    <code>
+      <providers>
+        <add name="OdbcSessionProvider" type="Samples.AspNet.Session.OdbcSessionStateStore" connectionStringName="OdbcSessionServices" writeExceptionsToEventLog="false" />
+      </providers>
+    </code>
+  </pre> 
+
+<hr/>
 
 ### JWT JSON Web Token
 https://jwt.io/
@@ -1466,21 +1474,25 @@ https://jwt.io/
       - Hashed - verified that the content has not been tampered with
 
 - **How it works**
-In authentication, when the user successfully logs in using his credentials, a JSON Web Token will be returned and must be saved locally instead of the traditional approach of creating a session in the server and returning a cookie
-
-Whenever the user wants to access a protected route, it should send the JWT, typically in the Authorization header using the Bearer schema
-
-This is a stateless authentication mechanism as the user state is never saved in the server memory. The server's protected routes will check for a valid JWT in the Authorization header, and if there is, the user will be allowed
-
-As JWTs are self-contained, all the necessary information is there, reducing the need of going back and forward to the database
-![JWT](image/README/JWT.PNG)
+  <br/>
+  In authentication, when the user successfully logs in using his credentials, a JSON Web Token will be returned and must be saved locally instead of the traditional approach of creating a session in the server and returning a cookie
+  <br/>
+  Whenever the user wants to access a protected route, it should send the JWT, typically in the Authorization header using the Bearer schema
+  <br/>
+  This is a stateless authentication mechanism as the user state is never saved in the server memory. The server's protected routes will check for a valid JWT in the Authorization header, and if there is, the user will be allowed
+  <br/>
+  As JWTs are self-contained, all the necessary information is there, reducing the need of going back and forward to the database
+  <br/>
+  ![JWT](image/README/JWT.PNG)
 
 - **Structure**
-In its compact form, JSON Web Token consist of three parts separated by dots(.) which are:
+  <br/>
+  In its compact form, JSON Web Token consist of three parts separated by dots(.) which are:
   - **Header**
     <br/>
     The header typically consists of two parts: the type of token (JWT) and the hashing algorithm being used (such as HMAC, SHA256 or RSA)
     - Example
+      <br/>  
       ![JWT (Header)](image/README/JWT%20(Header).PNG)   
 
   - **Payload**
@@ -1499,6 +1511,7 @@ In its compact form, JSON Web Token consist of three parts separated by dots(.) 
       These can the custom claims created to share information between parties that agree on using them and are neither registered or public claims
 
     - Example
+      <br/>
       ![JWT (Payload)](image/README/JWT%20(Payload).PNG)
 
   - **Signature**
@@ -1506,11 +1519,14 @@ In its compact form, JSON Web Token consist of three parts separated by dots(.) 
     To create the signature part, you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that
 
     - Example
+      <br/>
       ![JWT (Signature)](image/README/JWT%20(Signature).PNG)
 
 Therefore, a JWT typically looks like the following.
 <br/>
 (xxxxx.yyyyy.zzzzz)
+
+<hr/>
 
 ### OAuth
 https://oauth.net/
@@ -1542,6 +1558,8 @@ https://oauth.net/
   ![OAuth](image/README/OAuth.PNG)
   ![OAuth (2)](image/README/OAuth%20(2).PNG)
 
+<hr/>
+
 ### Open ID
 - **OpenID 1.0 and 2.0**
   - OpenID is an open standard and decentralized authentication protocol promoted by the non-profit OpenID Foundation
@@ -1551,39 +1569,41 @@ https://oauth.net/
     - Neither services nor the OpenID standard may mandate a specific means by which to authenticate users, allowing for approaches ranging from the common (such as passwords) to the novel (such as smart cards or biometrics)
 
 - **OpenID**
+<br/>
 https://openid.net/
 
 OpenID allows you to use an existing account to sign into multiple websites, without needing to create new passwords
-<br/>
+<br/><br/>
 You may choose to associate information with your OpenID that can be shared with the websites you visit, such as a name or email address
-<br/>
+<br/><br/>
 With OpenID, your password is only given to your identity provider, and that provider then confirms your identity to the websites you visit. Other than your provider, no website ever sees your password
 
 - **OpenID Authentication**
 The end-user interacts with a relying party (such as website) that provides an option to specify an OpenID for purposes of authentication
-<br/>
+<br/><br/>
 The relying party and the OpenID provider establish a shared secret, which the relying party then stores
-<br/>
+<br/><br/>
 The relying party redirects the end-user's user-agent to the OpenID provider so the end-user can authenticate directly with the OpenID provider
-<br/>
+<br/><br/>
 If the end-user accepts the OpenID provider's request to trust the relying party, then the user-agent is redirected back to the relying party
 
 ![OpenID Authentication](image/README/OpenID%20Authentication.PNG)
 
 - **OAuth and OpenID Connect**
-OAuth is directly related to OpenID Connect (OIDC) since OIDC is an authentication layer built on top of OAuth 2.0. OAuth is also distinct from XACML, which is an authentication policy standard
 <br/>
+OAuth is directly related to OpenID Connect (OIDC) since OIDC is an authentication layer built on top of OAuth 2.0. OAuth is also distinct from XACML, which is an authentication policy standard
+<br/><br/>
 OAuth can be used in conjunction with XACML where OAuth is used for ownership consent and access delegation whereas XACML is used to define the authorization policies (e.g. managers can view documents in their region)
 
 - **OpenID Connect**
 https://developers.google.com/identity/protocols/oauth2/openid-connect
 
 OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol
-<br/>
+<br/><br/>
 It allows Clients to verify the identity of the End-User based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the End-User in an interoperable and REST-like manner
-<br/>
+<br/><br/>
 OpenID Connect allows clients of all types, including Web-based, mobile and JavaScript clients, to request and receive information about authenicated sessions and end-users
-<br/>
+<br/><br/>
 The specification suite is extensible, allowing participants to use optional features such as encryption of identity data, discovery of OpenID Providers, and session management, when it makes sense for them
 
 ![OpenID Connect](image/README/OpenID%20Connect.PNG)
@@ -1596,99 +1616,107 @@ https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
   - The goal of risk rating is to identity the risk to the system and business in order to put a plan in place to address the risk through prioritization
 
 - **OWASP Risk Rating**
+<br/>
 RISK = LIKELIHOOD * IMPACT
 
 - **Risk Rating Method**
 ![Risk Rating Method](image/README/Risk%20Rating%20Method.PNG)
 
-**1. Identify a risk**
-  - The first step is to identify a security risk that needs to be rated. The tester needs to gather information about the threat agent involved, the attack that will be used, the vulnerability involved, and the impact of a successful exploit on the business
-
-**2. Estimating Likelihood**
-Once the tester has identified a potential risk and wants to figure out how serious it is, the first step is to estimate the "likelihood". At the highest level, this is a rough measure of how likely this vulnerability is to be uncovered and exploited by an attacker
-<br/>
-Here you are using the **Threat Agent Factors** and **Vulnerability Factors**
-
-- Factors
-  - **Threat agent**
-    <br/>
-    The goal here is to estimate the likelihood of a successful attack by this group of threat agents. Use the worst-case threat agent
-      - Skill Level (How technically skilled is this group of threat agents?)
-      - Motive (How motivated is this group of threat agents to find and exploit this vulnerability?)
-      - Opportunity (What resources and opportunities are required for this group of threat agents to find and exploit this vulnerability?)
-      - Size (How large is this group of threat agents?)
-  
-  - **Vulnerability**
-     <br/>
-    The goal here is to estimate the likelihood of the particular vulnerability involved being discovered and exploited. Assume the threat agent selected above.
-      - Ease of Discovery (How easy is it for this group of threat agents to discover this vulnerability?)
-      - Ease of Exploit (How easy is it for this group of threat agents to actually exploit this vulnerability?)
-      - Awareness (How well known is this vulnerability to this group of threat agents?)
-      - Intrusion Detection (How likely is an exploit to be detected?)
-
-**3. Estimating Impact**
-When considering the impact of a successful attack, it is important to realize that there are two kinds of impacts. The first is the "**technical impact**" on the application, the data it uses, and the functions it provides. The other is the "**business impact**" on the business and company operating the application
-
-
-- Factors
-  - **Technical Impact**
+  **1. Identify a risk**
   <br/>
-  Technical impact can be broken down into factors aligned with the traditonal security areas of concern: confidentiality, integrity, availability and accountability. The goal is to estimate the magnitude of the impact **on the system** if the vulnerability were to be exploited
-    - Loss of confidentiality (How much data could be disclosed and how sensitive is it?)
-    - Loss of integrity (How much data could be corrupted and how damaged is it?)
-    - Loss of availability (How much service could be lost and how vital is it?)
-    - Loss of accountability (Are the threat agents' actions traceable to an individual?)
+  The first step is to identify a security risk that needs to be rated. The tester needs to gather information about the threat agent involved, the attack that will be used, the vulnerability involved, and the impact of a successful exploit on the business
 
-  - **Business Impact**
+  **2. Estimating Likelihood**
   <br/>
-  Business impact stems from the technical impact but requires a deep understanding of **what is important to the company running the application**. In general, you should be aiming to support your risks with business impact, particularly if your audience is executive level. The business risk is what justifies investment in fixing security problems
-    - Financial damage (How much financial damage will result from an exploit?)
-    - Reputation damage (Would an exploit result in reputation damage that would harm the business?)
-    - Non-compliance (How much exposure does non-compliance introduce?)
-    - Privacy violation (How much personally identifiable information could be disclosed?)
+  Once the tester has identified a potential risk and wants to figure out how serious it is, the first step is to estimate the "likelihood". At the highest level, this is a rough measure of how likely this vulnerability is to be uncovered and exploited by an attacker
+  <br/><br/>
+  Here you are using the **Threat Agent Factors** and **Vulnerability Factors**
 
-**4. Determine the severity of the risk**
-In this step the likelihood estimate and the impact estimate are put together to calculate an overall severity for this risk. This is done by figuring out whether the likelihood is low, medium or high and then do the same for impact
-- **Informal**
-  <br/>
-  In many environments, there is nothing wrong with reviewing the factors and simply capturing the answers. The tester should think through the factors and identify the key "driving" factors that are controlling the result
-
-- **Repeatable**
-  <br/>
-  If it is necessary to defend the ratings or make them repeatable, then it is necessary to go through a more formal process of rating the factors and calculating the result
-
-- Sample
-![Determine severity of risk](image/README/Determine%20severity%20of%20risk.PNG)
-
-![Determine severity of risk (2)](image/README/Determine%20severity%20of%20risk%20(2).PNG)
-
-**5. Deciding what to fix**
-After the risks to the application have been classified, there will be a prioritized list of what to fix. As a general rules, the most severe risks should be fixed first. It simply does not help the overall risk profile to fix less important risks, even if they are easy or cheap to fix
-<br/>
-Remember that not all risks are worth fixing, and some loss is not only expected, but justifiable based upon the cost of fixing the issue. For example, if it would cost $100,000 to implement controls to stem $2,000 fraud per year, it would take 50 years return on investment to stamp out the loss. But remember there may be reputation damage from the fraud that could cost the organisation much more
-
-- **Handling risk**
-  - **Accept**
-    <br/>
-    Document the risk, acknowledge it and assign ownership
-
-  - **Avoid**
-    <br/>
-    Place other controls that will reduce or eliminate the risk
-
-  - **Mitigate**
-    <br/>
-    Fix the issue that exposes you to risk
+  - Factors
+    - **Threat agent**
+      <br/>
+      The goal here is to estimate the likelihood of a successful attack by this group of threat agents. Use the worst-case threat agent
+        - Skill Level (How technically skilled is this group of threat agents?)
+        - Motive (How motivated is this group of threat agents to find and exploit this vulnerability?)
+        - Opportunity (What resources and opportunities are required for this group of threat agents to find and exploit this vulnerability?)
+        - Size (How large is this group of threat agents?)
     
-  - **Transfer**
-    <br/>
-    If you are practically unable to deal with a risk, you may contractually obligate someone else to accept the risk
+    - **Vulnerability**
+       <br/>
+      The goal here is to estimate the likelihood of the particular vulnerability involved being discovered and exploited. Assume the threat agent selected above.
+        - Ease of Discovery (How easy is it for this group of threat agents to discover this vulnerability?)
+        - Ease of Exploit (How easy is it for this group of threat agents to actually exploit this vulnerability?)
+        - Awareness (How well known is this vulnerability to this group of threat agents?)
+        - Intrusion Detection (How likely is an exploit to be detected?)
 
-- **Threat Mitigation Examples**
-![Threat Mitigation Examples](image/README/Threat%20Mitigation%20Examples.PNG)
-    
-- **Which one to use**
-![Which one to use](image/README/Which%20one%20to%20use.PNG)
+  **3. Estimating Impact**
+  <br/>
+  When considering the impact of a successful attack, it is important to realize that there are two kinds of impacts. The first is the "**technical impact**" on the application, the data it uses, and the functions it provides. The other is the "**business impact**" on the business and company operating the application
+
+  - Factors
+    - **Technical Impact**
+    <br/>
+    Technical impact can be broken down into factors aligned with the traditonal security areas of concern: confidentiality, integrity, availability and accountability. The goal is to estimate the magnitude of the impact **on the system** if the vulnerability were to be exploited
+      - Loss of confidentiality (How much data could be disclosed and how sensitive is it?)
+      - Loss of integrity (How much data could be corrupted and how damaged is it?)
+      - Loss of availability (How much service could be lost and how vital is it?)
+      - Loss of accountability (Are the threat agents' actions traceable to an individual?)
+
+    - **Business Impact**
+    <br/>
+    Business impact stems from the technical impact but requires a deep understanding of **what is important to the company running the application**. In general, you should be aiming to support your risks with business impact, particularly if your audience is executive level. The business risk is what justifies investment in fixing security problems
+      - Financial damage (How much financial damage will result from an exploit?)
+      - Reputation damage (Would an exploit result in reputation damage that would harm the business?)
+      - Non-compliance (How much exposure does non-compliance introduce?)
+      - Privacy violation (How much personally identifiable information could be disclosed?)
+
+  **4. Determine the severity of the risk**
+  <br/>
+  In this step the likelihood estimate and the impact estimate are put together to calculate an overall severity for this risk. This is done by figuring out whether the likelihood is low, medium or high and then do the same for impact
+
+  - **Informal**
+    <br/>
+    In many environments, there is nothing wrong with reviewing the factors and simply capturing the answers. The tester should think through the factors and identify the key "driving" factors that are controlling the result
+
+  - **Repeatable**
+    <br/>
+    If it is necessary to defend the ratings or make them repeatable, then it is necessary to go through a more formal process of rating the factors and calculating the result
+
+  - Sample
+  ![Determine severity of risk](image/README/Determine%20severity%20of%20risk.PNG)
+
+  ![Determine severity of risk (2)](image/README/Determine%20severity%20of%20risk%20(2).PNG)
+
+  **5. Deciding what to fix**
+  <br/>
+  After the risks to the application have been classified, there will be a prioritized list of what to fix. As a general rules, the most severe risks should be fixed first. It simply does not help the overall risk profile to fix less important risks, even if they are easy or cheap to fix
+  <br/><br/>
+  Remember that not all risks are worth fixing, and some loss is not only expected, but justifiable based upon the cost of fixing the issue. For example, if it would cost $100,000 to implement controls to stem $2,000 fraud per year, it would take 50 years return on investment to stamp out the loss. But remember there may be reputation damage from the fraud that could cost the organisation much more
+
+  - **Handling risk**
+    - **Accept**
+      <br/>
+      Document the risk, acknowledge it and assign ownership
+
+    - **Avoid**
+      <br/>
+      Place other controls that will reduce or eliminate the risk
+
+    - **Mitigate**
+      <br/>
+      Fix the issue that exposes you to risk
+      
+    - **Transfer**
+      <br/>
+      If you are practically unable to deal with a risk, you may contractually obligate someone else to accept the risk
+
+  - **Threat Mitigation Examples**
+  ![Threat Mitigation Examples](image/README/Threat%20Mitigation%20Examples.PNG)
+      
+  - **Which one to use**
+  ![Which one to use](image/README/Which%20one%20to%20use.PNG)
+
+<hr/>
 
 ### Threat Modeling
 Threat Modeling is a structured approach to identify, quantify, and address the security threats and risks associated with an application
