@@ -1315,12 +1315,383 @@ A vulnerability or risk found during a code review should be addressed immediate
   - https://owasp.org/SecureCodingDogo/codereview101/
   - https://owasp.org/images/5/53/OWASP_Code_Review_Guide_v2.pdf
 
-### Session Management
+## Session Management
+
+### Introduction to Session Management
 - **Sessions**
   - A web session is a sequence of network HTTP request and response transactions associated to the same user
   - Modern and complex web applications require the retaining of information or status about each user for the duration of multiple requests
   - Sessions provide the ability to establish variables (such as access rights and localization settings) which will apply to each and every interaction a user has with the web application for the duration of the session
-  - Web applications can create sessions to keep track of anonymous users after the very first user request
-    - An example would be maintaining the user language preference
-  - Additionally, web applications will make use of sessions once the user has authenticated
-    - This ensures the ability to identify the user on any subsequent requests as well as being able to apply security access controls, authorized access to the user private data, and to increase the usability of the application
+
+ Web applications can create sessions to keep track of anonymous users after the very first user request
+  -  An example would be maintaining the user language preference
+  
+Additionally, web applications will make use of sessions once the user has authenticated
+  - This ensures the ability to identify the user on any subsequent requests as well as being able to apply security access controls, authorized access to the user private data, and to increase the usability of the application
+ 
+Therefore, current web applications can provide session capabilities **both pre and post authentication**
+
+Once an authenticated session has been established, the session ID (or token) is temporarily equivalent to the strongest authentication method used by the application
+  - such as username and password, passphrases, one-time passwords (OTP), client-based digital certificates, smartcards, or biometrics (such as fingerprint or eye retina)
+
+HTTP is a stateless protocol where each request and response pair is independent of other web interactions.
+
+Session management links both the authentication and authorization modules commonly available in web applications:
+- The session ID or token binds the user authentication credentials to the user HTTP traffic and the appropriate access controls enforced by the web application
+- The complexity of these components in modern web applications, plus the fact that its implementation and binding resides on the web developer's hands makes the implementation of a secure session management module very challenging
+
+![Session Management](image/README/Session%20Management.PNG)
+
+- Since HTTP and Web Server both are stateless, the only way to maintain a session is when some unique information about the session (session id) is passed between server and client in every request and response
+- Methods of Session Management:
+  - **User Authentication**
+    <br/>
+    Common for a user to provide authentication credentials from the login page and then the authentication information is passed between server and client to maintain the session
+
+  - **HTML Hidden Field**
+    <br/>
+    A unique hidden field in the HTML and when user starts navigating, we can set its value unique to the user and keep track of the session
+
+  - **URL Rewriting**
+    <br/>
+    A session identifier parameter is appended to every request and response to keep track of the session
+
+  - **Cookies**
+    <br/>
+    Cookies are small piece of information that are sent by the web server in the response header and gets stored in the browser cookies. When client make further request, it adds the cookie to the request header to keep track of the session
+
+- **Federated Identity**
+1. A federated identity in information technology is the means of linking a person's electronic identity and attributes, stored across multiple distinct **identity management** systems
+2. Federated identity is related to single sign-on (SSO), in which a user's single authentication ticket, or token, is trusted across multiple IT systems or even organisations
+3. The "federation" of identity describes the technologies, standards and use-cases which serve to enable the portability of identity information across otherwise autonomous security domains
+ - Technologies:
+   - Security Assertion Markup Language (SAML)
+   - OAuth
+   - OpenID
+   - Security Tokens (Simple Web Tokens, JSON Web Tokens and SAML assertions)
+   - Web Service Specifications and Windows Identity Foundation
+
+![Federated Identity](image/README/Federated%20Identity.PNG)
+
+### Web Server Session Management
+
+- **Java Session Management (Cookies)**
+![Java Session Management](image/README/Java%20Session%20Management.PNG)
+
+- **Java Session Management (HTTPSession)**
+ - Servlet API provides Session management through HttpSession interface. We can get session from HttpServletRequest object using following methods. HttpSession allows us to set objects as attributes that can be retrieved in future requests.
+   - HttpSession getSession()
+    <br/>
+    This method always returns a HttpSession object. It returns the session object attached with the request, if the request has no session attached, then it creates a new session and return it
+
+   - HttpSession getSession(boolean flag)
+    <br/>
+    This method returns HttpSession object if request has session else it returns null
+
+  - When HttpServletRequest getSession() does not return an active session, then it creates the new HttpSession object and adds a Cookie to the response obejct with name JSESSIONID and value as session id
+  - This cookie is used to identify the HttpSession object in further requests from client
+
+- **Java Session Management (URL Rewrite)**
+  - There may be times where the browser has cookies disabled
+  - The application may choose to pass session information in the URL
+  - The URL can be encoded with HttpServletResponse encodeURL() method
+    - In a redirect the request to another resource can be encoded with encodeRedirectURL() method
+  - **However**: there is a clear security concern with the session in the URL
+
+- **.NET Sessions Management**
+![.NET Session Management](image/README/.NET%20Session%20Management.PNG)   
+
+- .NET session state supports several different storage options for session data. Each option is identified by a value in the SessionStateMode enumeration. The following list describes the available session state modes:
+  - You can specify which mode you want .NET session state to use by assigning a SessionStateMode enumeration values to the **mode** attribute of the sessionState element in your application's Web.config file. Modes other than **InProc** and **Off** require additional parameters, such as connection-string values
+  - **InProc** mode, which stores session state in memory on the Web server. This is the default
+  - **StateServer** mode is a somewhat slower service than the in-process variant since calls go to another server. All session data is stored in memory of the State Machine
+  - **SQLServer** mode stores session state in a SQL Server database ensuring that session is maintained after an application is restarted and can be shared in a farm
+  - **Custom** mode, which enables you to specify a custom storage provider
+  - **Off** mode, which disables session state
+
+- **In-Process**
+  - **In-process** mode is the default session state mode and is specified using the InProc SessionStateMode enumeration value
+  - In-process mode stores session state values and variables in memory on the local Web server
+  - It is the only mode that supports the Session_OnEnd event
+  - The Session_OnEnd event occurs when a session is abandoned or times out
+
+- **State Server Mode**
+  - **StateServer** mode stores session state in a process, referred to as the ASP.NET state service, that is separate from the ASP.NET worker process or IIS application pool. Using this mode ensures that session state is preserved if the Web application is restarted and also makes session state available to multiple Web servers in a Web farm
+  - To improve the security of your application when using StateServer mode, it is recommended that you protect your stateConnectionString value by encrypting the sessionState section of your configuration file
+  - <pre>
+      <code>
+        <sessionState mode="StateServer" stateConnectionString="tcpip=SampleStateServer:42424" cookieless="false" timeout="20"/>
+      </code>
+    </pre> 
+
+- **SQL Server Mode**
+  - **SQLServer** mode stores session state in a SQL Server database. Using this mode ensures that session state is preserved if the Web application is restarted and also makes session state available to multiple Web servers in a Web farm
+  - To use SQLServer mode, you must first be sure the ASP.NET session state database is installed on SQL Server
+  - <pre>
+      <code>
+        <sessionState mode="SQLServer" sqlConnectionString="Integrated Security=SSPI;datasource=SampleSqlServer;"/>
+      </code>
+    </pre> 
+
+- **Custom Mode**
+  - **Custom** mode specifies that you want to store session state data using a custom session state store provider. When you configure your .NET application with a Mode of Custom, you must specify the type of the session state store provider using the providers sub-element of the sessionState configuration element. You specify the provider type using an add sub-element and include both a type attribute that specifies the provider's type name and a name attribute that specifies the provider instance name
+  - <pre>
+      <code>
+        <providers>
+          <add name="OdbcSessionProvider" type="Samples.AspNet.Session.OdbcSessionStateStore" connectionStringName="OdbcSessionServices" writeExceptionsToEventLog="false" />
+        </providers>
+      </code>
+    </pre> 
+
+### JWT JSON Web Token
+https://jwt.io/
+
+- **JSON Web Token (JWT)**
+  - JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object
+  - This information can be verified and trusted because it is digitally signed 
+    - JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA
+  - Although JWTs can be encrypted to also provide secrecy between parties
+    - Signed tokens can verify the integrity of the claims contained within it, while encrypted tokens hide those claims from other parties
+    - When tokens are signed using public/private key pairs, the signature also certifies that only the party holding the private key is the one that signed it
+
+- **Use Cases**
+  - **Authorization**
+    <br/>
+    This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token
+
+  - **Information Exchange**
+    <br/>
+    JSON Web Tokens are a good way of securely transmitting information between parties
+      - Signed tokens - confirm senders are who they say they are
+      - Hashed - verified that the content has not been tampered with
+
+- **How it works**
+In authentication, when the user successfully logs in using his credentials, a JSON Web Token will be returned and must be saved locally instead of the traditional approach of creating a session in the server and returning a cookie
+
+Whenever the user wants to access a protected route, it should send the JWT, typically in the Authorization header using the Bearer schema
+
+This is a stateless authentication mechanism as the user state is never saved in the server memory. The server's protected routes will check for a valid JWT in the Authorization header, and if there is, the user will be allowed
+
+As JWTs are self-contained, all the necessary information is there, reducing the need of going back and forward to the database
+![JWT](image/README/JWT.PNG)
+
+- **Structure**
+In its compact form, JSON Web Token consist of three parts separated by dots(.) which are:
+  - **Header**
+    <br/>
+    The header typically consists of two parts: the type of token (JWT) and the hashing algorithm being used (such as HMAC, SHA256 or RSA)
+    - Example
+      ![JWT (Header)](image/README/JWT%20(Header).PNG)   
+
+  - **Payload**
+    <br/>
+    The second part of the token is the payload, which contains the claims. **Claims are statements about an entity** (typically, the user) and additional data. There are three types of claims: 
+    - **Registered claims**
+      <br/>
+      These are a set of predefined claims which are not mandatory but recommended, to provide a set of useful, interoperable claims. Some of them are: iss(issuer), exp (expiration time), sub (subject), aud (audience) and others
+
+    - **Public claims**
+      <br/>
+      These can be defined at will by those using JWTs. But to avoid collisions they should be defined in the IANA JSON Web Token Registry or be defined as a URI that contains a collision resistant namespace
+
+    - **Private claims**
+      <br/>
+      These can the custom claims created to share information between parties that agree on using them and are neither registered or public claims
+
+    - Example
+      ![JWT (Payload)](image/README/JWT%20(Payload).PNG)
+
+  - **Signature**
+    <br/>
+    To create the signature part, you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that
+
+    - Example
+      ![JWT (Signature)](image/README/JWT%20(Signature).PNG)
+
+Therefore, a JWT typically looks like the following.
+<br/>
+(xxxxx.yyyyy.zzzzz)
+
+### OAuth
+https://oauth.net/
+
+- **OAuth**
+  - OAuth is an open standard for **access delegation**, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords
+  - This mechanism is used by companies such as Amazon, Google, Facebook, Microsoft and Twitter to permit the users to share information about their accounts with third party applications or websites
+  ![OAuth (Social Media)](image/README/OAuth%20(Social%20Media).PNG)
+  - OAuth decouples authentication from authorization and supports multiple use cases addressing different device capabilities. It supports server-to-server apps, browser-based apps, mobile/native apps, and consoles/TVs
+  - OAuth is a delegated authorization framework for REST/APIs. It enables apps to obtain limited access (scopes) to a user's data without giving away a user's password
+  - Designed specifically to work with HTTP, OAuth essentially allows access tokens to be issued to third-party clients by an authorization server, with the approval of the resource owner. The third party then uses the access token to access the protected resources hosted by the resource server
+
+- **OAuth Actors**
+![OAuth Actors](image/README/OAuth%20Actors.PNG)
+
+- **OAuth Scopes**
+![OAuth Scopes](image/README/OAuth%20Scopes.PNG)
+
+- **OAuth Tokens**
+  - Access tokens are the token the client uses to access the Resource Server (API). They are meant to be short-lived. Think of them in hours and minutes, not days and month. Because these tokens can be short lived and scale out, they cannot be revoked, you just have to wait for them to time out
+  - The other token is the refresh token. This is much longer-lived; days, months, years. This can be used to get new tokens and can be revoked to kill an applications access
+  - The OAuth spec does not define what a token is. It can be in whatever format you want. Usually though, you want these tokens to be JSON Web Tokens
+
+  Tokens are retrieved from endpoints on the authorization server.
+    - The authorize endpoint is where you go to get consent and authorization from the user
+    - The token endpoint provides the refresh token and access token
+
+  You can use the access token to get access to APIs. Once it expires, you will have to go back to the token endpoint with the refresh token to get a new access token.
+  ![OAuth](image/README/OAuth.PNG)
+  ![OAuth (2)](image/README/OAuth%20(2).PNG)
+
+### Open ID
+- **OpenID 1.0 and 2.0**
+  - OpenID is an open standard and decentralized authentication protocol promoted by the non-profit OpenID Foundation
+    - It allows users to be authenticated by co-operating sites (known as relying parties, or RP) using a third-party service, eliminating the need for webmasters to provide their own ad hoc login systems, and allowing users to log into multiple unrelated websites without having to have a separate identity and password for each
+  - The OpenID standard provides a framework for the communication that must take place between the identity provider and the OpenID acceptor (the "relying party")
+  - The OpenID protocol does not rely on a central authority to authenticate a user's identity
+    - Neither services nor the OpenID standard may mandate a specific means by which to authenticate users, allowing for approaches ranging from the common (such as passwords) to the novel (such as smart cards or biometrics)
+
+- **OpenID**
+https://openid.net/
+
+OpenID allows you to use an existing account to sign into multiple websites, without needing to create new passwords
+<br/>
+You may choose to associate information with your OpenID that can be shared with the websites you visit, such as a name or email address
+<br/>
+With OpenID, your password is only given to your identity provider, and that provider then confirms your identity to the websites you visit. Other than your provider, no website ever sees your password
+
+- **OpenID Authentication**
+The end-user interacts with a relying party (such as website) that provides an option to specify an OpenID for purposes of authentication
+<br/>
+The relying party and the OpenID provider establish a shared secret, which the relying party then stores
+<br/>
+The relying party redirects the end-user's user-agent to the OpenID provider so the end-user can authenticate directly with the OpenID provider
+<br/>
+If the end-user accepts the OpenID provider's request to trust the relying party, then the user-agent is redirected back to the relying party
+
+![OpenID Authentication](image/README/OpenID%20Authentication.PNG)
+
+- **OAuth and OpenID Connect**
+OAuth is directly related to OpenID Connect (OIDC) since OIDC is an authentication layer built on top of OAuth 2.0. OAuth is also distinct from XACML, which is an authentication policy standard
+<br/>
+OAuth can be used in conjunction with XACML where OAuth is used for ownership consent and access delegation whereas XACML is used to define the authorization policies (e.g. managers can view documents in their region)
+
+- **OpenID Connect**
+https://developers.google.com/identity/protocols/oauth2/openid-connect
+
+OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol
+<br/>
+It allows Clients to verify the identity of the End-User based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the End-User in an interoperable and REST-like manner
+<br/>
+OpenID Connect allows clients of all types, including Web-based, mobile and JavaScript clients, to request and receive information about authenicated sessions and end-users
+<br/>
+The specification suite is extensible, allowing participants to use optional features such as encryption of identity data, discovery of OpenID Providers, and session management, when it makes sense for them
+
+![OpenID Connect](image/README/OpenID%20Connect.PNG)
+
+## Risk Rating Methodologies 
+https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
+
+- **When and Why do we risk rate**
+  - Risk Rating should be completed when there is a finding from a review of the application architecture/design from threat modeling, through a code review, or a penetration test
+  - The goal of risk rating is to identity the risk to the system and business in order to put a plan in place to address the risk through prioritization
+
+- **OWASP Risk Rating**
+RISK = LIKELIHOOD * IMPACT
+
+- **Risk Rating Method**
+![Risk Rating Method](image/README/Risk%20Rating%20Method.PNG)
+
+**1. Identify a risk**
+  - The first step is to identify a security risk that needs to be rated. The tester needs to gather information about the threat agent involved, the attack that will be used, the vulnerability involved, and the impact of a successful exploit on the business
+
+**2. Estimating Likelihood**
+Once the tester has identified a potential risk and wants to figure out how serious it is, the first step is to estimate the "likelihood". At the highest level, this is a rough measure of how likely this vulnerability is to be uncovered and exploited by an attacker
+<br/>
+Here you are using the **Threat Agent Factors** and **Vulnerability Factors**
+
+- Factors
+  - **Threat agent**
+    <br/>
+    The goal here is to estimate the likelihood of a successful attack by this group of threat agents. Use the worst-case threat agent
+      - Skill Level (How technically skilled is this group of threat agents?)
+      - Motive (How motivated is this group of threat agents to find and exploit this vulnerability?)
+      - Opportunity (What resources and opportunities are required for this group of threat agents to find and exploit this vulnerability?)
+      - Size (How large is this group of threat agents?)
+  
+  - **Vulnerability**
+     <br/>
+    The goal here is to estimate the likelihood of the particular vulnerability involved being discovered and exploited. Assume the threat agent selected above.
+      - Ease of Discovery (How easy is it for this group of threat agents to discover this vulnerability?)
+      - Ease of Exploit (How easy is it for this group of threat agents to actually exploit this vulnerability?)
+      - Awareness (How well known is this vulnerability to this group of threat agents?)
+      - Intrusion Detection (How likely is an exploit to be detected?)
+
+**3. Estimating Impact**
+When considering the impact of a successful attack, it is important to realize that there are two kinds of impacts. The first is the "**technical impact**" on the application, the data it uses, and the functions it provides. The other is the "**business impact**" on the business and company operating the application
+
+
+- Factors
+  - **Technical Impact**
+  <br/>
+  Technical impact can be broken down into factors aligned with the traditonal security areas of concern: confidentiality, integrity, availability and accountability. The goal is to estimate the magnitude of the impact **on the system** if the vulnerability were to be exploited
+    - Loss of confidentiality (How much data could be disclosed and how sensitive is it?)
+    - Loss of integrity (How much data could be corrupted and how damaged is it?)
+    - Loss of availability (How much service could be lost and how vital is it?)
+    - Loss of accountability (Are the threat agents' actions traceable to an individual?)
+
+  - **Business Impact**
+  <br/>
+  Business impact stems from the technical impact but requires a deep understanding of **what is important to the company running the application**. In general, you should be aiming to support your risks with business impact, particularly if your audience is executive level. The business risk is what justifies investment in fixing security problems
+    - Financial damage (How much financial damage will result from an exploit?)
+    - Reputation damage (Would an exploit result in reputation damage that would harm the business?)
+    - Non-compliance (How much exposure does non-compliance introduce?)
+    - Privacy violation (How much personally identifiable information could be disclosed?)
+
+**4. Determine the severity of the risk**
+In this step the likelihood estimate and the impact estimate are put together to calculate an overall severity for this risk. This is done by figuring out whether the likelihood is low, medium or high and then do the same for impact
+- **Informal**
+  <br/>
+  In many environments, there is nothing wrong with reviewing the factors and simply capturing the answers. The tester should think through the factors and identify the key "driving" factors that are controlling the result
+
+- **Repeatable**
+  <br/>
+  If it is necessary to defend the ratings or make them repeatable, then it is necessary to go through a more formal process of rating the factors and calculating the result
+
+- Sample
+![Determine severity of risk](image/README/Determine%20severity%20of%20risk.PNG)
+
+![Determine severity of risk (2)](image/README/Determine%20severity%20of%20risk%20(2).PNG)
+
+**5. Deciding what to fix**
+After the risks to the application have been classified, there will be a prioritized list of what to fix. As a general rules, the most severe risks should be fixed first. It simply does not help the overall risk profile to fix less important risks, even if they are easy or cheap to fix
+<br/>
+Remember that not all risks are worth fixing, and some loss is not only expected, but justifiable based upon the cost of fixing the issue. For example, if it would cost $100,000 to implement controls to stem $2,000 fraud per year, it would take 50 years return on investment to stamp out the loss. But remember there may be reputation damage from the fraud that could cost the organisation much more
+
+- **Handling risk**
+  - **Accept**
+    <br/>
+    Document the risk, acknowledge it and assign ownership
+
+  - **Avoid**
+    <br/>
+    Place other controls that will reduce or eliminate the risk
+
+  - **Mitigate**
+    <br/>
+    Fix the issue that exposes you to risk
+    
+  - **Transfer**
+    <br/>
+    If you are practically unable to deal with a risk, you may contractually obligate someone else to accept the risk
+
+- **Threat Mitigation Examples**
+![Threat Mitigation Examples](image/README/Threat%20Mitigation%20Examples.PNG)
+    
+- **Which one to use**
+![Which one to use](image/README/Which%20one%20to%20use.PNG)
+
+### Threat Modeling
+Threat Modeling is a structured approach to identify, quantify, and address the security threats and risks associated with an application
+<br/>
+Threat modeling is an investigative technique for identifying application security risks/hazards that are technical (and even implementation specific)
+
