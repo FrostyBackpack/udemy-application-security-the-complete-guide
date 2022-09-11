@@ -682,9 +682,9 @@ Logging and alerts go unnoticed or are not responded to. Logs are not protected 
   - Ensure logs are formatted so that they can be imported in a centralized tool. Logs also need to be protected from tampering and exposure to unauthorized users
   - Integrate logs with monitoring and alerting tools
 
-### Dive into OWASP Top 10
+## Dive into OWASP Top 10
 
-#### Broken Access Control
+### Broken Access Control [# 1]
 https://owasp.org/Top10/A01_2021-Broken_Access_Control/
 
 - Authorization is the process where requests to access a resource should be granted or denied. It should be noted that authorization is not equivalent to authentication - as these terms and their definitions are frequently confused
@@ -737,7 +737,7 @@ https://owasp.org/Top10/A01_2021-Broken_Access_Control/
   </pre>
   - If an unauthenticated user can access either page, its a flaw. If a non-admin can access the admin page, this is a flaw
 
-#### Cryptographic Failures
+### Cryptographic Failures [# 2]
 https://owasp.org/Top10/A02_2021-Cryptographic_Failures/
 
 - **Data Protection**
@@ -763,7 +763,7 @@ https://owasp.org/Top10/A02_2021-Cryptographic_Failures/
   - A site does not use or enforce TLS for all pages or supports weak encryption. An attacker monitors network traffic (e.g. at an insecure wireless network), downgrades connections from HTTPS to HTTP, intercepts requests and steals the user's session cookie. The attcker then replays this cookie and hijacks the user's (authenticated) session, accessing or modifying the user's private data. Instead of the above, they could alter all transported data (e.g. the recipient of a money transfer)
 
 
-#### Injection
+### Injection [# 3]
 https://owasp.org/Top10/A03_2021-Injection/
 
 - **Injection**
@@ -812,9 +812,9 @@ This changes the meaning of both queries to return all the records from the acco
     <br/>
     ![OS Injection (2)](image/README/OS%20Injection%20(2).PNG)
   - **LDAP**
-    ![LDAP](../../../Downloads/LDAP.PNG)
+    ![LDAP](image/README/LDAP.PNG)
   - **XPATH**
-    ![XPath](../../../Downloads/XPath.PNG)
+    ![XPATH](image/README/XPath.PNG)
 
 - **Example**
   - http://example/defaul.aspx?user=*
@@ -827,7 +827,7 @@ This changes the meaning of both queries to return all the records from the acco
   - Escape special characters in the query flow
   - Limit the return of records in a query using SQL controls like LIMIT (record count)
 
-#### Insecure Design
+### Insecure Design [# 4]
 https://owasp.org/Top10/A04_2021-Insecure_Design/
 
 - **Insecure Design**
@@ -856,7 +856,7 @@ https://owasp.org/Top10/A04_2021-Insecure_Design/
 - **Bad Bots**
   - A retail chain's e-commerce website does not have protection against bots run by scalpers buying high-end video cards to resell auction websites. This creates terrible publicity for the video card makers and retail chain owners and enduring bad blood with enthusiasts who cannot obtain these cards at any price. Careful anti-bot design and domain logic rules, such as purchases made within a few seconds of availability, might identify inauthentic purchases and rejected such transactions
 
-#### Security Misconfiguration
+### Security Misconfiguration [# 5]
 https://owasp.org/Top10/A05_2021-Security_Misconfiguration/
 
 - **Absence of security settings in**
@@ -883,7 +883,7 @@ https://owasp.org/Top10/A05_2021-Security_Misconfiguration/
 - **Default settings in the cloud**
   - A cloud service provider (CSP) has default sharing permissions open to the Internet by other CSP users. This allows sensitive data stored within cloud storage to be accessed
 
-#### Using Known Vulnerable Components
+### Using Known Vulnerable Components [# 6]
 https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/
 
 - **Dependency**
@@ -929,7 +929,7 @@ https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/
 - **Patching Process**
 ![Patching Process](image/README/Patching%20Process.PNG)
 
-#### Identification and Authentication Failures
+### Identification and Authentication Failures [# 7]
 https://owasp.org/Top10/A07_2021-Vulnerable_and_Outdated_Components/
 
 - **How can Authentication be broken**
@@ -957,7 +957,7 @@ https://owasp.org/Top10/A07_2021-Vulnerable_and_Outdated_Components/
   - Password change not required
     - Once you have been given a new password, it should be changed on the next login
 
-#### Software and Data Integrity Failures
+### Software and Data Integrity Failures [# 8]
 https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/
 
 - **Software Integrity Failures**
@@ -969,7 +969,7 @@ https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/
 - **Example**
   - SolarWinds malicious update: Nation-states have been known to attack update mechanisms, with a recent notable attack being the SolarWinds Orion attack. The company that develops the software had secure build and update integrity processes. Still, these were able to be subverted, and for several months, the firm distributed a highly targeted malicious update to more than 18,000 organisations, of which around 100 or so were affected. This is one of the most far-reaching and most significant breaches of this nature in history
 
-#### Security Logging and Monitoring Failures
+### Security Logging and Monitoring Failures [# 9]
 https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/
 
 - **Security Logging and Monitoring Failures**
@@ -998,7 +998,7 @@ https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/
 - **SIEM (Security Information and Event Management)**
 ![SIEM](image/README/SIEM.PNG)
 
-#### Server-Side Request Forgery (SSRF)
+### Server-Side Request Forgery (SSRF) [# 10]
 https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery/
 
 - **SSRF occurs when we do not**
@@ -1022,3 +1022,305 @@ https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery/
 
   - Compromise internal services
     - The attacker can abuse internal services to conduct further attacks such as Remote Code Execution (RCE) or Denial of Service (Do)
+
+## Defense and Tools
+
+### Cross Site Scripting 
+- **Cross Site Scripting (XSS)**
+  - Is a type of computer security vulnerability typically found in web applications. XSS enables attackers to inject client-side scripts into web pages viewed by other users. A cross-site scripting vulnerability may be used by attackers to bypass access controls such as the same-origin policy
+  - This subversion is possible because the web application fails to properly validate input from the web browser (e.g. client) and/or fails to properly escape that input in the response
+
+  ![Cross-Site Scripting](image/README/Cross-Site%20Scripting.PNG)
+
+  ![Cross-Site Scripting (2)](image/README/Cross-Site%20Scripting%20(2).PNG)
+
+### Content Security Policy (CSP)
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+
+- **Content Security Policy (CSP)**
+  - Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks
+  - To enable CSP, you need to configure your web server to return the Content-Security-Policy HTTP header
+  - Browsers that do not support it will work with servers that implement it and vice versa; browsers that do not support CSP simply ignore it, functioning as usual, defaulting to the standard same-origin policy for web content
+  
+- **Mitigating XXS**
+  - CSP makes it possible server administrators to reduce or eliminate the vectors by which XSS can occur by specifying the domains that the browser should consider to be valid sources of executable scripts
+  - A CSP compatible browser will then only execute scripts loaded in source files received from those whitelisted domains, ignoring all other script (including inline scripts and event-handling HTML attributes)
+  - As an ultimate form of protection, sites that want to never allow scripts to be executed can opt to globally disallow script execution
+
+- **Writing a Policy**
+  - A policy is described using a series of policy directives, each of which describes the policy for a certain resource type of policy area
+  - A policy needs to include a default-sec or script-src directive to prevent inline scripts from running, as well as blocking the use of eval()
+  - Your policy should include a default-src policy directive, which is a fallback for other resource types when they do not have policies of their own
+  - A policy needs to include a default-src or style-src directive to restrict inline styles from being applied from a `<style>` element or a style attribute
+
+- **Directives CSP 1.0**
+  - **connect-src** (d)
+    <br/>
+    restricts which URLs the protected resource can load using script interfaces (e.g. send() method of an XMLHttpRequest object)
+
+  - **font-src** (d)
+    <br/>
+    restricts from where the protected resource can load fonts
+
+  - **img-src** (d)
+    <br/>
+    restricts from where the protected resource can load images
+
+  - **media-src** (d)
+    <br/>
+    restricts from where the protected resource can load video, audio, and associated text tracks
+
+  - **object-src** (d)
+    <br/>
+    restricts from where the protected resource can load plugins
+
+  - **script-src** (d)
+    <br/> 
+    restricts which scripts the protected resource can execute. Additional restrictions against inline scripts and eval. Additional directives in CSP2 for hash and nonce support
+
+  - **style-src** (d)
+    <br/>
+    restricts which styles the user may applies to the protected resource. Additional restrictions against inline and eval
+
+  - **default-src** (d)
+    <br/>
+    covers any directive with
+
+  - **frame-src**
+    <br/> 
+    restricts from where the protected resource can embed frames. Note, deprecated in CSP2
+
+  - **report-url**
+    <br/>
+    specifies a URL to which the user agent sends reports about policy violation
+
+  - **sandbox**
+    <br/>
+    specifies an HTML sandbox policy that the user agent applies to the protected resource. Optional in 1.0
+
+- **Directives CSP 2.0**
+  - **form-action**
+    <br/>
+    restricts which URLs can be used as the action of HTML form elements 
+
+  - **frame-ancestors**
+    <br/>
+    indicates whether the user agent should allow embedding the resource using a frame, iframe, object, embed or applet element or equivalent functionality in non-HTML resources
+  
+  - **plugin-types**
+    <br/>
+    restricts the set of plugins that can be invoked by the protected resource by limiting the types of resources that can be embedded
+  
+  - **base-uri**
+    <br/>
+    restricts the URLs that can be used to specify the document URL
+
+  - **child-src** (d)
+    <br/>
+    governs the creation of nested browsing contexts as well as Worker execution contexts
+
+- **Sample**
+![CSP Sample](../../../Downloads/CSP%20Sample.PNG)
+
+### Security Models
+- **Security Models**
+  - Security models are used to understand the systems and processes developed to enforce security principles
+  - Three key elements play a role in systems with respect to model implementation: People, Processes, Technology
+  - Addressing a single element of the three may provide benefits, but more effectiveness can be achieved through addressing multiple elements
+  - How security models are used in an OS design:
+     ![Security Model](image/README/Security%20Model.PNG)
+
+- **Access Control Models**
+  - **Access Control List (ACL)**
+    <br/> 
+    A list of permissions attached to an object. An ACL specifies which users or system processes are granted access to objects, as well as what operations are allowed on given objects
+  
+  - **Bell-LaPadula model**
+    <br/>
+    The model is a formal state transition model of computer security policy that describes a set of access control rules which use security labels on objects and clearances for subjects. Security labels range from the most sensitive (e.g. "Top Secret"), down to the least sensitive (e.g. "Unclassified" or "Public")
+
+  - **Role-based Access Control**
+    <br/>
+    Role-based access control (RBAC) is a policy-neutral access-control mechanism defined around roles and privileges. The components of RBAC such as role-permissions, user-role and role-role relationships make it simple to perform user assignments
+  
+  - **Access-based Access Control**
+    <br/>
+    Also known as policy-based access control, defines an access control paradigm whereby access rights are granted to users through the use of policies which combine attributes together. The policies can use any type of attributes (user attributes, resource attributes, object, environment attributes, etc.) This model supports Boolean logic, in which rules contain "IF, THEN" statements about who is making the request, the resource and the action
+
+- **Multi-level Security Model - Integrity Model**
+  - **Biba Integrity Model**
+    <br/>
+    The model is designed so that subjects may not corrupt data in a level ranked higher than the subject, or be corrupted by data from a lower level than the subject. In the Biba model, users can only create content at or below their own integrity level (a monk may write a prayer book that can be read by commoners, but not one to be read by a high priest) Conversely, users can only view content at or above their own integrity level (a monk may read a book written by the high priest, but may not read a pamphlet written by a lowly commoner)
+
+  - **Clark-Wilson Model**
+    <br/>
+    Instead of defining a formal state machine, the model defines each data item and allows modifications thorugh only a small set of programs. The model uses a three-part relationship of subject/program/object (where program is interchangeable with transaction) known as a triple or an access control triple. Within this relationship, subjects do not have direct access to objects. Objects can only be accessed through programs
+
+- **Multi-level Security Model - Information Flow Model**
+  - **Brewer-Nash Model (Chinese Wall)**
+    <br/>
+    Technology can be employed to prevent access to data by conflicting groups. People can be trained not to compromise the separation of information. Policies can be put in place to ensure that the technology and the actions of personnel are properly engaged to prevent compromise
+
+  - **Data Flow Diagrams**
+    <br/>
+    Specifically designed to document the storage, movement and processing of data in a system. They are constructed on a series of levels. The highest level, level 0, is a high-level contextual view of the data flow through the system. The next level, level 1, is created by expanding elements of the level 0 diagram. This level can be exploded further to a level 2 diagram, or the lowest-level diagram of a system
+
+  - **Use Case Models**
+    <br/>
+    Requirements from the behavioral perspective provide a description of how the system utilizes data. Use cases are constructed to demonstrate how the system processes data for each of its defined functions
+
+  - **Assurance Models**
+    <br/>
+    The level of confidence that software is free from vulnerabilities, either intentionally designed into the software or accidentally inserted at any time during its lifecycle, and that software functions in the intended manner
+
+### Software Composition Analysis (SCA)
+- **Software Composition Analysis (SCA)**
+  - SCA is the process of validating that the components, libraries and opensource software that is used in an application is free from known vulnerabilities and license compliance
+  - These external software components can come from several places:
+    - Downloads
+    - Commercial applications
+    - Third-party libraries and software
+    - From outsource development by consulting
+
+  - SCA can provide:
+    - Component tracking and inventory
+    - Vulnerability identification and remediation recommendation
+    - License management
+   
+  ![SCA](image/README/SCA.PNG)
+
+- **OWASP Dependency Check**
+  - .NET and Java compatible, Dependency Check is used to scan libraries used as build dependencies during the build process
+  - Dependencies are matched against the NVD (National Vulnerability Database) to determine whether the dependency being used is vulnerable
+  - A report is generated and can be used to identify the dependencies as well as understand the mitigation (In mos t cases, the mitigation is to use the most up to date level of software)
+
+- **National Vulnerability Database**
+https://nvd.nist.gov/
+
+  - The NVD is the U.S government repository of standards based vulnerability mmanagement data represented using Security Content Automation Protocol (SCAP) This data enables automation of vulnerability management, security measurement, and compliance
+  - The NVD includes databases of security checklist references, security related software flaws, misconfigurations, product names and impact metrics
+  
+![NVD](image/README/NVD.PNG)
+
+- **Sample**
+![Dependency Check](image/README/Dependency%20Check.PNG)
+
+- **JFrog Xray**
+![JFrog](image/README/JFrog.PNG)
+![JFrog Xray](image/README/JFrog%20Xray.PNG)
+
+### Security Knowledge Framework
+- **Security Knowledge Framework (SKF)**
+  - The OWASP Security Knowledge Framework is intended to be a tool that is used as a guide for building and verifying secure software
+  - Education is the first step in the Secure Software Development Life Cycle
+  - "The OWASP Security Knowledge Framework is an expert system web-application that uses the OWASP Application Security Verification Standard and other resources. It can be used to support developers in pre-development (security by design) as well as after code is released (OWASP ASVS 
+  - Level 1-3)"
+
+- **Why**
+  - Security by design
+  - Information is hard to find
+  - Examples lack security details
+  - Security is hard
+  - Together we can create secure web applications
+  - Defensive coaching approach
+  - SKF is the first step in SDLC
+
+- **How SKF can be used**
+  - Security Requirements OWASP ASVS for development and for third party vendor applications
+  - Security knowledge reference (Code examples/Knowledge Base items)
+  - Security is part of design with the pre-development functionality in SKF
+  - Security post-development functionality in SKF for verification with the OWASP ASVS
+
+- **Stages of Development**
+  - **Pre development stage**
+    <br/>
+    Here we detect threats beforehand and we provide developers with secure development patterns as well as providing feedback and solutions on how to handle their threats
+
+  - **Post development stage**
+    <br/>
+    By means of checklists, we guide developers through a process where we harden their application infrastructure and functions by providing feedback and solutions
+
+- **References**
+  - Link
+    <br/>
+    https://www.owasp.org/index.php/OWASP_Security_Knowledge_Framework
+  - Video
+    <br/>
+    https://www.youtube.com/watch?v=_XS9gr5OAwc
+  - Demo Site 
+    <br/>
+    https://demo.securityknowledgeframwork.org/
+
+### Secure Code Review
+- **Who to include**
+  - Like threat modeling, you want to have the appropriate members involved in the review:
+    - Developers
+    - Architects
+    - Security SME (Subject Matter Expert)
+    - Depending on the portion of the application you may need to include the SME for that topic (Authentication, DB logic, User Experience ...)
+  
+- **Scope and Aid**
+1. Code reviews should take into consideration the threat model and high-risk transactions in the application
+2. A completed threat model will highlight the areas of concern
+3. Any time code is added/updated in those high-risk areas a code review should include a security component
+4. When changes are required to the threat model due to findings during that code review, the threat model should be updated
+
+- **Understand the risk**
+![Understand the risk](image/README/Understand%20the%20risk.PNG)
+
+- When considering the risk of code under review, consider some common criteria for establishing risk of a particular code module. The higher the risk, the more thorough the review should be
+  - Application features and business logic
+  - Context/Sensitive Data
+  - The code (language, feature, nuance of language)
+  - User roles and access rights (anonymous access?)
+  - Application type (mobile, desktop, Web)
+  - Design and architecture of the application
+  - Company standards, guidelines and requirements that apply
+
+- The reviewer will need certain information about the development in order to be effective
+  - Design documents, business requirements, functional specifications, test results and the like
+  
+- If the reviewer is not part of the development team, they need to talk with developers and the lead architect for the application and get a sense of the application
+  - Does not have to be a long meeting, it could be a whiteboard session for the development team to share some basic information about the key security considerations and controls
+
+- **Information Gathering Tips**
+  - Walkthrough of the actual running application
+  - A brief overview of the structure of the code base and any libraries
+  - Knowing the architecture of the application goes a long way in understanding the security threats that are applicable
+    - Tech Stack, deployment, users and data
+  - All the required information of the proposed design including flow charts, sequence diagrams, class diagrams and requirements documents to understand the objective of the proposed design should be used as reference during the review
+
+- **Performing the review (using the checklist)**
+  - When using the Code Review Checklist Template, the reviewer may filter out non-applicable categories
+  - It is recommended that the complete list is used for code that is high risk. For instance, code that impacts patient safety workflows or mission critical functionality shall use the complete code review list
+  - The code review template should be completed and appended during code check-in in the code repository or with the completed code review using a tool (Crucible)
+  
+- **When to perform the review**
+  - **Code**
+    <br/>
+    Pre-commit: Code review during pre-commit means that dangerous or sub-par code does not make it to the code branch. However, this does reduce the time to delivery of new code
+
+  - **Post**
+    <br/>  
+    Post-commit: This allows for faster delivery of software but runs the risk of allowing dangerous code into the branch. Other developers may also add their code which can make future reviews more cumbersome
+
+  - **Audit**
+    <br/>
+    During a code audit: This can be triggered by an event such as a found vulnerability and should review the entire area of concern rather than focus on a single code commit
+
+- **What to do with results**
+A vulnerability or risk found during a code review should be addressed immediately if found in the pre-commit phase. However, there may be cases when code cannot be mitigated, or issues are found after code has been committed. In those cases, go through a Risk Rating to determine its impact and undestand the timeframe for remediation.
+
+- **OWASP Secure Code Review**
+  - https://owasp.org/SecureCodingDogo/codereview101/
+  - https://owasp.org/images/5/53/OWASP_Code_Review_Guide_v2.pdf
+
+### Session Management
+- **Sessions**
+  - A web session is a sequence of network HTTP request and response transactions associated to the same user
+  - Modern and complex web applications require the retaining of information or status about each user for the duration of multiple requests
+  - Sessions provide the ability to establish variables (such as access rights and localization settings) which will apply to each and every interaction a user has with the web application for the duration of the session
+  - Web applications can create sessions to keep track of anonymous users after the very first user request
+    - An example would be maintaining the user language preference
+  - Additionally, web applications will make use of sessions once the user has authenticated
+    - This ensures the ability to identify the user on any subsequent requests as well as being able to apply security access controls, authorized access to the user private data, and to increase the usability of the application
