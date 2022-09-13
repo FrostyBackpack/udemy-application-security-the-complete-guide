@@ -1876,4 +1876,440 @@ Threat modeling is an investigative technique for identifying application securi
 
   - **Security Control**
     <br/>
-    Authentication
+    Integrity using hashing algorithms, checksum
+
+- **Repudiation**
+
+  - **Definition**
+    <br/>
+    State of affairs where the author of a statement will not be able to successfully challenge the authorship of the statement or validity of an associated contract
+
+  - **Example**
+    <br/>
+    Threat action aimed to perform illegal operations in a system that lacks the ability to trace the prohibited operations
+
+  - **Security Control**
+    <br/>
+    Non-Repudiation using encryption, digital signatures, and notarization
+
+- **Information Disclosure**
+
+  - **Definition**
+    <br/>
+    The interntional or unintentional release of secure or private/confidential information to an untrusted environment
+
+  - **Example**
+    <br/>
+    Threat action to read a file that one was not granted access to, or to read data in transit
+
+  - **Security Control**
+    <br/>
+    Confidentiality through encryption
+
+- **Denial of Service**
+
+  - **Definition**
+    <br/>
+    Is a cyber-attack where the perpetrator seeks to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting services of a host
+
+  - **Example**
+    <br/>
+    Threat aimed to deny access to valid users, such as by making a web server temporarily unavailable or unusable
+
+  - **Security Control**
+    <br/>
+    Availability
+
+- **Elevation of Privileges**
+
+  - **Definition**
+    <br/>
+    Is the act of exploiting a bug, design flaw or configuration oversight in an operating system or software applciation to gain elevated access to resources that are normally protected from an application or user
+
+  - **Example**
+    <br/>
+    Threat aimed to gain privileged access to resources for gaining unauthorized access to information or to compromise a system
+
+  - **Security Control**
+    <br/>
+    Authorization
+
+### Maual Threat Modeling
+
+- **Best done in groups**
+  Including:
+  <br/>
+
+  - Implementation expert (an architect)
+  - Solution designer
+  - Implementation team
+  - Should include a security SME
+  - Group should be a manageable size (6-8 people)
+
+- **Audience**
+
+  - **Your team**
+    <br/>
+    The treat model becomes a reference for understanding the security of your solution, and therefore is like system level tech design
+  - **Other teams**
+    <br/>
+    Other teams may rely on your components to understand their own security. Threat models should reference related threat models
+  - **Pen testers**
+    <br/>
+    This is a map to potentially hacking the application
+  - **Clients**
+    <br/>
+    Your clients may ask to see if you are considering security. You would most likely hand over a high level and not a raw threat modal
+
+  - **Threat Modeling mindset**
+    - **What are you building?**
+      <br/>
+      What is the scope, What do you own
+    - **What can go wrong?**
+      <bn/>
+      Realistic
+    - **What should you do about those things that can go wrong?**
+      <br/>
+      Mitigations, Counter Measures
+    - **Did you do a decent job of analysis?**
+      <br/>
+      Retrosepective, Did you capture all the points
+
+- **Threat Models are never complete**
+  <br/>
+  This is a living artifact expected to change and grow over time. A complex system is never truly complete
+
+- **Sample Board**
+  ![Threat Model Sample Board](image/README/Threat%20Model%20Sample%20Board.png)
+
+- **Example**
+  Retail Store User Stories
+  <br/>
+  ![Retail Store User Stories](image/README/Threat%20Model%20User%20Stories.png)
+  <br/>
+  Retail Store Architecture
+  <br/>
+  ![Retail Store Architecture](image/README/Threat%20Model%20Architecture.png)
+  <br/>
+  Components of the System
+  <br/>
+  ![Components of the System](image/README/Threat%20Model%20Components%20of%20system.png)
+  <br/>
+  Who, Why, What, How, Impact/Counter
+  <br/>
+  ![Who, Why, WHat, How, Impact/Counter](image/README/Threat%20Model%20Impact%20Counter.png)
+  <br/>
+  Create the Board
+  ![Create the Board](image/README/Threat%20Model%20Create%20Board.png)
+
+### Threat Modeling with Microsoft Threat Modeling Tool
+
+**1. Creating the Model**
+
+- System Model
+- Find Threats
+- Address Threats
+- Validate Model
+
+  <br/>
+  Using Microsoft Threat Model, the architecture is drawn out.
+  <br/>
+  The diagram should be as in depth as possible, but should be not so much that it is distracting.
+  <br/>
+  The scope of the diagram should be identified.
+
+- **Things to consider**
+
+  - Scope
+  - System components (e.g. databases, mail servers, etc)
+  - Backups, monitoring, logging, etc.
+  - Actors/Abusers
+  - Process and data flows (e.g. cookies, tokens, etc)
+
+- **A note about Scoping**
+  <br/>
+  This is a combination of a workflow diagram and an architecture diagram.
+  <br/>
+  The purpose of scoping small is to concentrate on a small part of the system so you can get to the end of the threat modeling process.
+  <br/>
+  Boil down a workflow to something as small as you can.
+  <br/>
+  For a reasonably complex system, you would otherwise never reach the end.
+
+**2. Create a diagram**
+
+- The diagram must help you understand and discuss system security considerations
+- The diagram should contain the items determined in Step 1. It is okay if you missed things you can always go back and break things down further or remove items as you gain a better view of the system
+- The diagram should show components, data stores, data flows and trust boundaries
+  <br/>
+  ![Diagram Essentials](image/README/Diagram%20Essentials.png)
+- Do not create an eye-chart
+
+- Sample
+  <br/>
+  ![Simple Web Application](image/README/Simple%20WebApplication.png)
+  - Accounts (UIDs on unix saystems, or SIDS on Windows) Network interfaces
+  - Different physical computers
+  - Virtual machines
+  - Organizational boundaries
+  - Almost anywhere you can argue for different privileges
+
+**3. Identify and Analyze threats**
+
+- **What can go wrong**
+  <br/>
+  Now that you have a diagram, you can really start looking for what can go wrong with its security.
+  <br/>
+  Classifying threats using **STRIDE**:
+  - **S**poofing
+  - **T**ampering
+  - **R**epudiation
+  - **I**nformation Disclosure
+  - **D**enial of Service
+  - **E**levation of Privilege
+- **Getting Started**
+  - If you are not sure where to start, start with the external entities or events which drive activity
+  - Wherever you choose to begin, you want to aspire to some level of organisation
+  - You could also go in "STRIDE order" through the diagram
+  - Without some organisation, it is hard to tell when you are done, but be careful not to add so much structure that you stifle creativity
+
+**Example**
+![Microsoft Threat Modeling Tool](image/README/Microsoft%20Threat%20Modeling%20Tool.png)
+
+## Encryption and Hashing
+
+### Encryption
+
+- **Encryption Types**
+
+  - **Symmetric Encryption**
+
+    - Allows for encryption and decryption
+    - Same key is used to encrypt and decrypt data
+    - Example: Use this for storing sensitive data in a database
+      <br/>
+      ![Symmetric Encryption](image/README/Symmetric%20Encryption.png)
+
+    <br/>
+
+    - **AES**
+      <br/>
+      AES has been adopted by the U.S. government and is now used worldwide. It supersedes the Data Encryption Standard (DES),[9] which was published in 1977
+
+    - **Blowfish**
+      <br/>
+      Blowfish provides a good encryption rate in software and no effective cryptanalysis of it has been found to date
+
+    - **3DES**
+      <br/>
+      A symmetric-key block cipher, which applies the DES cipher algorithm three times to each data block
+
+    <br/>
+    Older, less security algorithms: DES, RC4
+
+  - **Asymmetric Encryption**
+    - Allows for encryption and decryption, as well as repudiation
+    - One key is used to encrypt and another key is used to decrypt data
+    - Example: Verify that a message came from an individual using their private key
+      <br/>
+    - Keys are generated together
+    - Public keys are freely distributed
+    - Private keys are kept secret and never handed out
+    - Private key is used for Encryption/Decryption and Signing
+      <br/>
+      ![Asymmetric Encryption](image/README/Asymmetric%20Encryption.png)
+
+- **RSA**
+
+  - RSA (Rivest-Shamir-Adleman) is the most widely used asymmetric. Used for encryption and digital signatures
+  - In RSA cryptography, both the public and the private keys can encrypt a message; the opposite key from the one used to encrypt a message is used to decrypt it
+  - It provides a method of assuring the confidentiality, integrity, authenticity and non-reputability of electronic communications and data storage
+
+- **Symmetric vs Asymmetric**
+  ![Symmetric vs Asymmetric](image/README/Symmetric%20vs%20Asymmetric.png)
+
+### Encryption Use Cases
+
+1. Use Case 1: HTTPS - Encryption
+   <br/>
+   ![HTTPS Encryption](image/README/HTTPS%20Encryption.png)
+   <br/>
+   Most websites today are using HTTPS. This is basically a way to encrypt the connection between your browser and the server. For instance, maybe you are going to Amazon/Facebook/Google, your browser will be able to encrypt that traffic that is going to the server.
+   <br/>
+   So one of the primary components of this HTTPS is certificates. Certificates are a way for a third party to vouch for the owner of a private key. And basically that means that a server with private and public key pairs, with asymmetric encryption, a server will get a private and public keeper and they will go out to a third party (entrust data card) The server or the owner of the server will go out to a third party and get a certificate. The certificate is signed. Therefore, it vouches for the servers ownership of that private key (that certificate is then used to pass out publicly - public key [the other half of that asymmetric key])
+   <br/>
+   The certificate is then used by browser. When it goes to Amazon/Facebook/Google, the browser will have the entrust data card certificate in its rolodex of certificates, and therefore, it knows that it will trust the server owns the private key.
+   <br/>
+   Public key: embedded within certificate
+   <br/>
+   Private key: stay private on the server
+   <br/>
+   Asymmetric encryption allows the client/browser to encrypt any of the traffic going to the server and server is the only one that can decrypt it because it is the only one that has the private key.
+
+2. Use Case 2: Digital Signatures
+   <br/>
+   ![Signing Encryption](image/README/Signing%20Encryption.png)
+   <br/>
+3. You have a document - Medical Record
+   <br/>
+4. You hash that document to fixed size gibberish
+   <br/>
+5. The gibberish is the fingerprint of the document
+   <br/>
+6. Use your private key you sign the fingerprint
+   <br/>
+7. This produces the digital signature of the document
+   <br/>
+8. Append this signature to the document
+   <br/>
+   You are going to hash the document so it is going to be gibberish (not the same document - fingerprint/checksum/fixed size of gibberish) You use your private key to sign that output from the hash. This produces a digital signature of the document. So because you used your private key to sign, you are the only one that has ownership of that privacy and therefore you are the only own that could have signed that document.
+   <br/>
+   To create the digital signature, you penned this to the document and this provides digital signature to that document. So if you want to verify that document first, you would take the public key and decrypt it to get the hash (only private key could have encrypted it) And if those two hashes match, that means that the document has not been modified (provides you both integrity and repudiation)
+
+9. Use Case 3: Signing with Security
+   <br/>
+   ![Signing with Security](image/README/Signing%20with%20Security.png)
+   <br/>
+   Alice is the one that created the document which is going to send it over to Bob.
+10. Alice has a document
+11. Alice is going to hash the document and create fingerprint
+12. With her private key, she is going to sign that fingerprint and create a digital signature (provides authentication)
+13. She takes a symmetric key and encrypt the document
+14. She is going to take Bob's public key to encrypt that symmetric key (provides security)
+15. She then send both the encrypted document and symmetric key over to Bob
+16. Bob is able to take his private key and decrypt that symmetric key
+17. Once he has that symmetric key decrypted, he can then decrypt the encrypted document
+18. With Alice's public key, Bob is able to verify by decrypting that digital signature
+19. He hashes that decrypted document with a symmetric key and if two of those matched, then he knows that the document has not been tampered with (provides integrity) And if Alice wants to get verification, she will ask Bob to sign what he hash with his private key and send back over to Alice. Alice uses Bob's public key to decrypt that digital signature and gets the fingerprint of the document that Bob actually hashed. And if that matches to her original, then we know that there is verification that Bob received it
+
+- **Key Management**
+  - The algorithms that encrypt the data are all the same (what makes it secure is the keys)
+  - As organisations use more encryption, they also end up with more keys, and more varieties of keys
+  - In some companies, you might have millions of keys. And every day, you generate mroe keys and they have to be managed and controlled. If the bad guy gets access to the keys, he gets access to the data. And if the keys get lost, you cannot access the data
+  - Other factors that contributed to the pain were fragmented and isolated systems, lack of skilled staff and inadequate management tools
+
+### Hashing
+
+- **Hash**
+  <br/>
+  ![Hash](image/README/Hash.png)
+
+  - One-way. Not possible to reverse
+  - Collision Resistant (given an input and its hash, it should be hard to find a different input with the same hash)
+
+- **Uses for Hashing**
+
+  - Digital Signatures
+  - Passwords
+  - Blockchains
+  - Identifying whether a file has been modified
+
+- **Salt**
+  <br/>
+  ![Salt](image/README/Salt.png)
+
+  - Random data of fixed length
+  - Concatenated to input before hashing
+  - Unique for each input
+  - Used to make hashes unique and protect against brute force style attacks
+
+- **Hash Functions**
+
+  - **MD5**
+    <br/>
+    Producing a 128-bit hash, MD5 is a widely used, however not very secure hashing algorithm. It can still be used as a checksum to verify data integrity, but only against unintentional corruption
+  - **SHA-1**
+    <br/>
+    Produces a 160-bit hash value. Since 2005, SHA-1 has been considered insecure against robust attacks. Since then, it has been deemed as insecure as MD5
+  - **SHA-2**
+    <br/>
+    SHA-2 includes significant changes from its predecessor. The SHA-2 family consists of six hash functions with digests (hash values) that are 224, 256, 384 or 512 bits
+  - **SHA-3**
+    <br/>
+    The latest iteration of the SHA family with a varied outputs of 224, 256, 384 or 512 bits
+
+- **Hash Attacks**
+  - A Hash Collision Attack is an attempt to find two input strings of a hash function that produce the same hash result. Because hash functions have infinite input length and a predefined output length, there is inevitably going to be the possibility of two different inputs that produce the same output hash
+    - **Birthday attacks**
+      <br/>
+      This applies to finding collisions in hashing algorithms because its much harder to find something that collides with a given hash than it is to find any two inputs that hash to the same value
+      <br/>
+      Example: A classroom of 30 students and a teacher. The teacher wishes to find pairs of students that have the same birthday
+      - The teacher asks for everyone's birthday to find such pairs
+      - For example, if the teacher fixes a particular date say October 10, then the probability that at least one student is born on that day is about 7.9%
+      - However, the proability that at least one student has the same birthday as any other student is around 70%
+        <br/>
+        ![Birthday Attack](image/README/Birthday%20Attack.png)
+    - **Brute Force**
+      <br/>
+      In cryptography, a brute-force attack consists of an attacker trying many passwords to passphrases with the hope of eventually guessing correctly
+    - **Dictionary**
+      <br/>
+      A technique for defeating a cipher or authentication mechanism by trying to determine its decryption key or passphrase by trying hundreds or sometimes millions of likely possibilities (words in a dictionary)
+    - **Rainbow table**
+      <br/>
+      A rainbow table is a precomputed table for reversing cryptographic hash functions, usually for cracking password hashes
+
+### Public Key Infrastructure (PKI)
+
+- **Digital Certificate**
+
+  - Identity and proof of key ownership
+  - It is digital representation of an Identity, and it allows one to confirm with who you are transferring data to/from
+  - A certificate binds an entity's unique distinguished name (DN) and other additional attributes that identifies an entity with a public key associated with its corresponding private key
+
+  <br/>
+  In cryptography, a certificate authority or certification authority (CA) is an entity that issues digital certificates. A digital certificate certifies the ownership of a public key by the named subject of the certificate.
+  <br/>
+  ![Digital Certificate](image/README/Digitial%20Certificate.png)
+  - Certificate Authorities are the foundation of PKI
+  - Offloads the trust to a third party
+  - Relying parties can rely on signatures or assertions that correspond to the certificate being presented
+
+- **Public Key Infrastructure (PKI)**
+
+  - A highly protected ecosystem that allows for businesses to issue trusted Digital Certificates
+  - There is a chain of trust in the issuing and root CA's and many cases the root certificate is "offline" only used when cutting a certificate for an issuing CA. This protects the root.
+    ![PKI](image/README/PKI.png)
+
+- **Certificate Signing Request (CSR)**
+  ![CSR](image/README/CSR.png)
+  ![CSR (2)](<image/README/CSR%20(2).png>)
+  ![CSR (3)](<image/README/CSR%20(3).png>)
+
+### Password Management
+
+- **Password Handling - Best Practices**
+  <br/>
+  https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/
+
+  - Align password length, complexity and rotation policies with National Institute of Standards and Technology (NIST) 800-63b's guidelines in section 5.1.1
+  - Implement multi-factor authentication to prevent credential stuffing, brute force and stolen credential reuse
+  - Limit failed login attempts
+  - Used advanced authentication methods (biometrics, PKI, passwordless tech)
+  - Always transmit over secure, encrypted channels. Store securely using hashing
+  - Make sure passwords are never logged in log files
+  - Do not utilize default passwords when deploying (especially for admin/privilege accounts)
+  - Check passwords against the top 10k weak passwords: https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-100000.txt
+
+- **Password Storage - Best Practices**
+  <br/>
+  https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
+
+  - Never store passwords in plain text, only one-way hashes
+  - Use a cryptographically strong hash algorithm
+    - Argon2id, scrypt, bcrypt or PBKDF2 depending on requirements
+  - Use sufficient "salt" during hashing and do not reuse "salt" values
+  - Physically segregate stored hashes from the rest of application data
+
+- **Entropy**
+
+  - Entropy: a measure of the disorder of a system
+  - https://www.youtube.com/watch?v=IcUUfMeOijg
+    <br/>
+    ![Entropy](image/README/Entropy.png)
+
+- **Password Entropy**
+  - Password entropy is based on the character set used (which is expansible by using lowercase, uppercase, numbers as well as symbols) as well as password length
+  - Password entropy predicts how difficult a given password would be to crack through guessing, brute force cracking, dictionary attacks or other common methods
+  - Note: Encryption creates randomness which cannot be compressed as well. For maximum efficiency you should compress before encrypting
