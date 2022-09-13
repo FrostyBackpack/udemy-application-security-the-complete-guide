@@ -9,9 +9,9 @@
 ![SDLC](image/README/SDLC%20Update.PNG)
 
 - Requirement Analysis
-  `<br/>`
+  <br/>
   Build out requirements for what it is that you are going to develop
-  `<br/>`
+  <br/>
 
   - High level view of requirements and goals
   - Extracts requirements or requirements analysis
@@ -21,15 +21,15 @@
   - Slotting of resources
 
 - Design
-  `<br/>`
+  <br/>
   Make your decisions around Technology and how it is going to actually be designed, what it is going to look like
-  `<br/>`
+  <br/>
 
   - Describe features and operations
 
     - Screen layout
     - Business rules
-    - Procress diagrams
+    - Process diagrams
     - Pseudo code and documentation
 
   - Prototype work
@@ -39,7 +39,7 @@
     - System architecture
 
 - Implementation
-  `<br/>`
+  <br/>
   Coding phase in SDLC, then you start testing and there is going to be some evolution
 
   - Input (Requirements and Design)
@@ -55,7 +55,7 @@
     - Deliverable Code
 
 - Testing
-  `<br/>`
+  <br/>
   Testing phase in SDLC
 
   - Static Analysis (Code testing)
@@ -66,44 +66,44 @@
   - System testing (Testing a completely integrated system)
 
 - Evolution
-  `<br/>`
+  <br/>
   Do some learnings from what you have built and put that into the requirements again to make enhancements to the development product that you have created
 
   Patch, Build, Test, Prod:
-  `<br/>`
+  <br/>
   You want to make sure that if there is any issues found such as security or even just defects, you want to patch those issues then rebuild, retest and then push it to production
 
 <hr/>
 
 ## Security
 
-Security is anything you do to protect an `<u>`asset`</u>` that is `<u>`vulnerable`</u>` to some `<u>`attack`</u>`, `<u>`failure`</u>`, or `<u>`error`</u>` [threats]
+Security is anything you do to protect an <u>asset</u> that is <u>vulnerable</u> to some <u>attack</u>, <u>failure</u>, or <u>error</u> [threats]
 
 - **Asset**
-  `<br/>`
+  <br/>
   An **asset** is anything you deem to have **value**
-  `<br/>`
+  <br/>
   An asset may be valuable because:
 
-  - It `<u>`holds`</u>` its value (E.g. gold/diamonds)
-  - It `<u>`produces`</u>` value (E.g. Technology space, a server in a data center - running applications produce value to organization)
-  - It `<u>`provides access`</u>` to value (E.g. a PIN number to a bank account to get money - something that needs to be protected)
+  - It <u> holds</u> its value (E.g. gold/diamonds)
+  - It <u> produces</u> value (E.g. Technology space, a server in a data center - running applications produce value to organization)
+  - It <u>provides access</u> to value (E.g. a PIN number to a bank account to get money - something that needs to be protected)
 
 - **Vulnerability**
-  `<br/>`
+  <br/>
   A vulnerability is any weakness in an asset that makes it susceptible to attack of failure
 - **Attack**
-  `<br/>`
-  An attack is any `<u>`intentional`</u>` action that can reduce the value of an asset
-  `<br/>`
+  <br/>
+  An attack is any <u>intentional</u> action that can reduce the value of an asset
+  <br/>
   E.g. An attacker might perform a DDoS attack on that web server to reduce value for organisation intentionally
 - **Failures + Errors**
-  `<br/>`
-  Failures and errors are `<u>`unintentional`</u>` actions that can reduce the value of an asset
-  `<br/>`
+  <br/>
+  Failures and errors are <u>unintentional</u> actions that can reduce the value of an asset
+  <br/>
   E.g. There might be an unplanned outage because of a power outage or maybe a new push for a patch that gets pushed at web server that does not work that creates an outage for that web server, making it unavailable for organisation so it reduce value unintentionally
 
-Attacks, Failures and Errors are actions that we collectively refer to as `<u>`threats`</u>`
+Attacks, Failures and Errors are actions that we collectively refer to as <u>threats</u>
 
 ### Security Goals ("Anything")
 
@@ -113,7 +113,7 @@ These goals are specifically defined by how we measure an asset's value
 
 How does value define our security goals?
 
-- The goal of security is to protect an asset's `<u>`value`</u>` from threats
+- The goal of security is to protect an asset's <u>value</u> from threats
 
 1. Determine what assets we want to protect
 2. Learn how the asset works and interacts with other things
@@ -127,19 +127,19 @@ We must consider the unique nature of it assets and capabilities when considerin
 When we protect something that provides access value, we are maintaining its confidentiality
 
 - **Confidentiality**
-  `<br/>`
+  <br/>
   Information is only available to those who should have access (we can do this through encryption and HTTPS when we talking about browser traffic)
 
 When we protect something that holds its value, we are maintaining its integrity
 
 - **Integrity**
-  `<br/>`
+  <br/>
   Data is known to be correct and trusted (we can do this through hashing, checksum, sometimes digital signatures)
 
 When we protect something that produces value, we are maintaining its availability
 
 - **Availability**
-  `<br/>`
+  <br/>
   Information is available for use by legitimate users when it is needed (we can do this through building high availability and redundancy into our system)
 
 **Real World Example**
@@ -147,35 +147,35 @@ When we protect something that produces value, we are maintaining its availabili
 - About a rocket
 
   - List assets
-    `<br/>`
+    <br/>
     (identifies what is actually on the rocket)
-    `<br/>`
+    <br/>
     Rocket itself, the food, the fuel, the water, the payload that is within the rocket, the equipment, the manifest, etc.
   - List vulnerabiltiies
-    `<br/>`
+    <br/>
     (possible vulnerabilties that impact rocket)
-    `<br/>`
+    <br/>
     A weak heat shield, faulty equipment, the hole could be too thin, etc.
   - List threats
-    `<br/>`
+    <br/>
     (attacks, failures, errors that impact rocket)
-    `<br/>`
+    <br/>
     Space debris, atmosphere, weather, pilot error, etc.
 
 - How we secure it
-  `<br/>`
+  <br/>
   Based on the list of vulnerabilties and threats, we can have different ways that we could mitigate it.
-  `<br/>`
+  <br/>
   For instance, we could make the hole thicker or with using more duarble material. However, that could also alter things in the sense that we might make the rocket heavier and therefore, we would need more fuel to get it up or we could have less cargo space.
-  `<br/>`
+  <br/>
   Hence, the concept is making sure that the mitigations and the security that we put around our assets are in line with what the actual assets value is and make sure that we're not compromising the asset further by creating more complicated mitigations or remediation strategies.
 
-We have well defined goals and security mechanisms, but some mechanisms are better because they fit `<u>`security principles`</u>`
+We have well defined goals and security mechanisms, but some mechanisms are better because they fit <u>security principles</u>
 
 Security principles aid in selecting or designing the correct mechanisms to implement our goals
 
 Protection of information in computer systems [Doc]
-`<br/>`
+<br/>
 https://web.mit.edu/Saltzer/www/publications/protection/
 
 ![Protection of Information in computer systems](image/README/Protection%20of%20Information%20in%20computer%20systems.png)
@@ -183,7 +183,7 @@ https://web.mit.edu/Saltzer/www/publications/protection/
 ![Security Pyramid](image/README/Security%20Pyramid.PNG)
 
 OWASP WebGoat
-`<br/>`
+<br/>
 https://owasp.org/www-project-webgoat/
 
 <hr/>
@@ -191,43 +191,43 @@ https://owasp.org/www-project-webgoat/
 ## Introduction to OWASP Top 10 [2021]
 
 **1. Broken Access Control**
-`<br/>`
+<br/>
 Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other user's accounts, view sensitive files, modify other users' data, change access rights, etc.
 
 **2. Cryptographic Failures**
-`<br/>`
+<br/>
 Failure to sufficiently protect data in transit or rest from exposure to unauthorized individuals. This can include poor usage of encryption or the lack of encryption all together.
 
 **3. Injection**
-`<br/>`
+<br/>
 Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.
 
 **4. Insecure Design**
-`<br/>`
+<br/>
 Failing to build security into the application early in the design process through a process of threat modeling, and secure design patterns and principles.
 
 **5. Security Misconfiguration**
-`<br/>`
+<br/>
 Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigurated HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion.
 
 **6. Vulnerable and Outdated Components**
-`<br/>`
+<br/>
 Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts.
 
 **7. Identification and Authentication Failure**
-`<br/>`
+<br/>
 Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, ot to exploit other implementation flaws to assume other users' identities temporarily or permanently.
 
 **8. Software and Data Integrity Failures**
-`<br/>`
+<br/>
 Code or infrastructure that does not properly protect against integrity failures like using plugins from untrusted sources that can lead to a compromise.
 
 **9. Insufficient Logging and Monitoring Failures**
-`<br/>`
+<br/>
 Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data. Most breach studies show time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 
 **10. Server-Side Request Forgery**
-`<br/>`
+<br/>
 SSRF occurs when an application fetches resources without validating the destination URL. This can be taken advantage of by an attacker who is able to enter a destination of their choosing.
 
 ### OWASP Help
@@ -238,78 +238,78 @@ OWASP offers that are great hints and series and frameworks that can be leverage
 
 - **Flagship**
   The OWASP Flagship destination is given to projects that have demonstrated strategic value to OWASP and application security as a whole
-  `<br/>`
+  <br/>
 - **Lab**
   OWASP Labs projects represent projects that have produced a deliverable of value
-  `<br/>`
+  <br/>
 - **Incubator**
   OWASP Incubator projects represent the experimental playground where projects are still being fleshed out, ideas are still being proven and development is still underway
-  `<br/>`
+  <br/>
 - **Low Activity**
   These projects had no release in at least a year. However, have shown to be valuable tools Code [Low Activity] Health Check February 2016
 
 ### How to start with OWASP
 
 OWASP Top 10: the classic guideline
-`<br/>`
+<br/>
 https://owasp.org/www-project-top-ten/
 
 OWASP Cheat Sheets to get into stuff without getting annoyed
-`<br/>`
+<br/>
 https://github.com/OWASP/CheatSheetSeries
 
 Tools:
 
 - Security Shephard
-  `<br/>`
+  <br/>
   https://github.com/OWASP/SecurityShephard
 - WebGoat
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-webgoat/
 - OWASP Juice Shop
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-juice-shop/
 - OWASP ZAP (Zed Attack Proxy)
-  `<br/>`
+  <br/>
   https://www.zaproxy.org/
 - OWTF (Offensive Web Testing Framework)
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-owtf/
 - OWASP ASVS
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-application-security-verification-standard/
 - Secure Coding Practices Quick Reference Guide
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/
 - Java HTML Sanitizer
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-java-html-sanitizer/
 - CSRF Guard Project
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-csrfguard/
 - ESAPI
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-enterprise-security-api/
 - Developers Guide
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/
 - Security Knowledge Framework
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-security-knowledge-framework/
 - OWASP Testing Guide
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-web-security-testing-guide/
 - Code Review Guidelines
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-code-reviews-guide/
 - Dependency Check
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-dependency-check/
 - Dependency Track
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-dependency-track/
 - DefectDojo
-  `<br/>`
+  <br/>
   https://owasp.org/www-project-defectdojo/
 
 ### SANS 25
@@ -330,55 +330,55 @@ Tools:
 ### Threat Actors and Definition
 
 - **Confidentiality**
-  `<br/>`
+  <br/>
   Concept of preventing the disclosure of information to unauthorized parties
-  `<br/>`
+  <br/>
 - **Integrity**
-  `<br/>`
+  <br/>
   Refers to protecting data from unauthorized alteration
-  `<br/>`
+  <br/>
 - **Availability**
-  `<br/>`
+  <br/>
   Access to systems by authorized personnel can be expressed as the system's availability
-  `<br/>`
+  <br/>
 - **Authentication**
-  `<br/>`
+  <br/>
   Authentication is the process of determining the identity of a user
-  `<br/>`
+  <br/>
 - **Authorization**
-  `<br/>`
+  <br/>
   Authorization is the process of applying access control rules to a user process, determining whether or not a particular user process can access an object
-  `<br/>`
+  <br/>
 - **Accounting (Audit)**
-  `<br/>`
+  <br/>
   Accounting is a means of measuring activity
-  `<br/>`
+  <br/>
 - **Non-Repudiation**
-  `<br/>`
+  <br/>
   Non-Repudiation is the concept of preventing a subject from denying a previous action with an object in a system
-  `<br/>`
+  <br/>
 - **Least Privilege**
-  `<br/>`
+  <br/>
   Subject should have only the necessary rights and privileges to perform its current task with no additional rights and privileges
-  `<br/>`
+  <br/>
 - **Separation of Duties**
-  `<br/>`
+  <br/>
   Ensures that for any given task, more than one individual needs to be involved
-  `<br/>`
+  <br/>
 - **Defense in Depth**
-  `<br/>`
+  <br/>
   Defense in depth is also known by the terms layered security (or defense) and diversity defense
-  `<br/>`
+  <br/>
 - **Fail Safe**
-  `<br/>`
+  <br/>
   When a system experiences a failure, it should fail to a safe state (Doors open when there is a power failure)
-  `<br/>`
+  <br/>
 - **Fail Secure**
-  `<br/>`
+  <br/>
   The default state is locked or secured. So a fail secure lock locks the door when power is removed.
-  `<br/>`
+  <br/>
 - **Single point of failure**
-  `<br/>`
+  <br/>
   A single point of failure is any aspect of a system that, if it fails, the entire system
 
 #### Types of attackers
@@ -420,7 +420,7 @@ Tools:
 ### Identifying Vulnerabilities
 
 - **CVE (Common Vulnerabilities and Exposure)**
-  `<br/>`
+  <br/>
   https://cve.mitre.org/cve/
 
   - Common Vulnerabiltiies and Exposures is a list of common identifiers for publicly known cyber security vulnerabiltiies
@@ -432,7 +432,7 @@ Tools:
     - Industry-endorsed via the CVE Numbering Authorities, CVE Board, and numerous products and services that include CV
 
 - **CVSS (Common Vulnerability Scoring System)**
-  `<br/>`
+  <br/>
   https://nvd.nist.gov/vuln-metrics/cvss
 
   - Common Vulnerability Scoring Sytem provides a way to capture the principal characteristics of a vulnerability and produce a numerical score reflecting its severity. The numerial score can then be translated into a qualitative representation (such as low, medium, high, and critical) to help organisations properly assess and prioritize their vulnerability management processes
@@ -443,7 +443,7 @@ Tools:
       https://www.nvd.nist.gov/vuln/detail/CVE-2017-14977
 
 - **CWE (Common Weakness Enumeration)**
-  `<br/>`
+  <br/>
   https://cwe.mitre.org/
 
   - Common Weakness Enumeration is a community-developed list of common software security weaknesses. It serves as a common language, a measuring stick for software security tools, and as a baseline for weakness identification, mitigation, and prevent efforts
@@ -710,13 +710,13 @@ https://owasp.org/Top10/A02_2021-Cryptographic_Failures/
 - **Data Protection**
 
   - **Protected Health Information (PHI)**
-    `<br/>`
+    <br/>
     Names, Dates, Phone/Fax Numbers, Email, SSN, MRN, Account Numbers, Biometric (finger, retinal, voice prints), Images
   - **Personally Identifiable Information (PII)**
-    `<br/>`
+    <br/>
     Name, Address, Passport, Vehicle information, Drivers license, Credit card numbers, Digital identity, birthplace, genetic information, login name
   - **Sensitive Financial Information**
-    `<br/>`
+    <br/>
     Credit/Debit card numbers and security codes, Account numbers, loan agreements, loan details, Tax ID, PoS transactions
 
 - **Cryptographic Failures**![Cryptographic Failures](image/README/Cryptograhic%20Failures.PNG)
@@ -778,7 +778,7 @@ https://owasp.org/Top10/A03_2021-Injection/
 
   - **OS Command**
     ![OS Injection](image/README/OS%20Injection.PNG)
-    `<br/>`
+    <br/>
     ![OS Injection (2)](<image/README/OS%20Injection%20(2).PNG>)
   - **LDAP**
     ![LDAP](image/README/LDAP.PNG)
@@ -1063,55 +1063,55 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 - **Directives CSP 1.0**
 
   - **connect-src** (d)
-    `<br/>`
+    <br/>
     restricts which URLs the protected resource can load using script interfaces (e.g. send() method of an XMLHttpRequest object)
   - **font-src** (d)
-    `<br/>`
+    <br/>
     restricts from where the protected resource can load fonts
   - **img-src** (d)
-    `<br/>`
+    <br/>
     restricts from where the protected resource can load images
   - **media-src** (d)
-    `<br/>`
+    <br/>
     restricts from where the protected resource can load video, audio, and associated text tracks
   - **object-src** (d)
-    `<br/>`
+    <br/>
     restricts from where the protected resource can load plugins
   - **script-src** (d)
-    `<br/>`
+    <br/>
     restricts which scripts the protected resource can execute. Additional restrictions against inline scripts and eval. Additional directives in CSP2 for hash and nonce support
   - **style-src** (d)
-    `<br/>`
+    <br/>
     restricts which styles the user may applies to the protected resource. Additional restrictions against inline and eval
   - **default-src** (d)
-    `<br/>`
+    <br/>
     covers any directive with
   - **frame-src**
-    `<br/>`
+    <br/>
     restricts from where the protected resource can embed frames. Note, deprecated in CSP2
   - **report-url**
-    `<br/>`
+    <br/>
     specifies a URL to which the user agent sends reports about policy violation
   - **sandbox**
-    `<br/>`
+    <br/>
     specifies an HTML sandbox policy that the user agent applies to the protected resource. Optional in 1.0
 
 - **Directives CSP 2.0**
 
   - **form-action**
-    `<br/>`
+    <br/>
     restricts which URLs can be used as the action of HTML form elements
   - **frame-ancestors**
-    `<br/>`
+    <br/>
     indicates whether the user agent should allow embedding the resource using a frame, iframe, object, embed or applet element or equivalent functionality in non-HTML resources
   - **plugin-types**
-    `<br/>`
+    <br/>
     restricts the set of plugins that can be invoked by the protected resource by limiting the types of resources that can be embedded
   - **base-uri**
-    `<br/>`
+    <br/>
     restricts the URLs that can be used to specify the document URL
   - **child-src** (d)
-    `<br/>`
+    <br/>
     governs the creation of nested browsing contexts as well as Worker execution contexts
 
 - **Sample**
@@ -1125,46 +1125,46 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
   - Three key elements play a role in systems with respect to model implementation: People, Processes, Technology
   - Addressing a single element of the three may provide benefits, but more effectiveness can be achieved through addressing multiple elements
   - How security models are used in an OS design:
-    `<br/>`
+    <br/>
     ![Security Model](image/README/Security%20Model.PNG)
 
 - **Access Control Models**
 
   - **Access Control List (ACL)**
-    `<br/>`
+    <br/>
     A list of permissions attached to an object. An ACL specifies which users or system processes are granted access to objects, as well as what operations are allowed on given objects
   - **Bell-LaPadula model**
-    `<br/>`
+    <br/>
     The model is a formal state transition model of computer security policy that describes a set of access control rules which use security labels on objects and clearances for subjects. Security labels range from the most sensitive (e.g. "Top Secret"), down to the least sensitive (e.g. "Unclassified" or "Public")
   - **Role-based Access Control**
-    `<br/>`
+    <br/>
     Role-based access control (RBAC) is a policy-neutral access-control mechanism defined around roles and privileges. The components of RBAC such as role-permissions, user-role and role-role relationships make it simple to perform user assignments
   - **Access-based Access Control**
-    `<br/>`
+    <br/>
     Also known as policy-based access control, defines an access control paradigm whereby access rights are granted to users through the use of policies which combine attributes together. The policies can use any type of attributes (user attributes, resource attributes, object, environment attributes, etc.) This model supports Boolean logic, in which rules contain "IF, THEN" statements about who is making the request, the resource and the action
 
 - **Multi-level Security Model - Integrity Model**
 
   - **Biba Integrity Model**
-    `<br/>`
+    <br/>
     The model is designed so that subjects may not corrupt data in a level ranked higher than the subject, or be corrupted by data from a lower level than the subject. In the Biba model, users can only create content at or below their own integrity level (a monk may write a prayer book that can be read by commoners, but not one to be read by a high priest) Conversely, users can only view content at or above their own integrity level (a monk may read a book written by the high priest, but may not read a pamphlet written by a lowly commoner)
   - **Clark-Wilson Model**
-    `<br/>`
+    <br/>
     Instead of defining a formal state machine, the model defines each data item and allows modifications thorugh only a small set of programs. The model uses a three-part relationship of subject/program/object (where program is interchangeable with transaction) known as a triple or an access control triple. Within this relationship, subjects do not have direct access to objects. Objects can only be accessed through programs
 
 - **Multi-level Security Model - Information Flow Model**
 
   - **Brewer-Nash Model (Chinese Wall)**
-    `<br/>`
+    <br/>
     Technology can be employed to prevent access to data by conflicting groups. People can be trained not to compromise the separation of information. Policies can be put in place to ensure that the technology and the actions of personnel are properly engaged to prevent compromise
   - **Data Flow Diagrams**
-    `<br/>`
+    <br/>
     Specifically designed to document the storage, movement and processing of data in a system. They are constructed on a series of levels. The highest level, level 0, is a high-level contextual view of the data flow through the system. The next level, level 1, is created by expanding elements of the level 0 diagram. This level can be exploded further to a level 2 diagram, or the lowest-level diagram of a system
   - **Use Case Models**
-    `<br/>`
+    <br/>
     Requirements from the behavioral perspective provide a description of how the system utilizes data. Use cases are constructed to demonstrate how the system processes data for each of its defined functions
   - **Assurance Models**
-    `<br/>`
+    <br/>
     The level of confidence that software is free from vulnerabilities, either intentionally designed into the software or accidentally inserted at any time during its lifecycle, and that software functions in the intended manner
 
 ### Software Composition Analysis (SCA)
@@ -1236,22 +1236,22 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 - **Stages of Development**
 
   - **Pre development stage**
-    `<br/>`
+    <br/>
     Here we detect threats beforehand and we provide developers with secure development patterns as well as providing feedback and solutions on how to handle their threats
   - **Post development stage**
-    `<br/>`
+    <br/>
     By means of checklists, we guide developers through a process where we harden their application infrastructure and functions by providing feedback and solutions
 
 - **References**
 
   - Link
-    `<br/>`
+    <br/>
     https://www.owasp.org/index.php/OWASP_Security_Knowledge_Framework
   - Video
-    `<br/>`
+    <br/>
     https://www.youtube.com/watch?v=_XS9gr5OAwc
   - Demo Site
-    `<br/>`
+    <br/>
     https://demo.securityknowledgeframwork.org/
 
 ### Secure Code Review
@@ -1272,7 +1272,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 4. When changes are required to the threat model due to findings during that code review, the threat model should be updated
 
 - **Understand the risk**
-  `<br/>`
+  <br/>
   ![Understand the risk](image/README/Understand%20the%20risk.PNG)
 
   - When considering the risk of code under review, consider some common criteria for establishing risk of a particular code module. The higher the risk, the more thorough the review should be
@@ -1310,17 +1310,17 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 - **When to perform the review**
 
   - **Code**
-    `<br/>`
+    <br/>
     Pre-commit: Code review during pre-commit means that dangerous or sub-par code does not make it to the code branch. However, this does reduce the time to delivery of new code
   - **Post**
-    `<br/>`
+    <br/>
     Post-commit: This allows for faster delivery of software but runs the risk of allowing dangerous code into the branch. Other developers may also add their code which can make future reviews more cumbersome
   - **Audit**
-    `<br/>`
+    <br/>
     During a code audit: This can be triggered by an event such as a found vulnerability and should review the entire area of concern rather than focus on a single code commit
 
 - **What to do with results**
-  `<br/>`
+  <br/>
   A vulnerability or risk found during a code review should be addressed immediately if found in the pre-commit phase. However, there may be cases when code cannot be mitigated, or issues are found after code has been committed. In those cases, go through a Risk Rating to determine its impact and undestand the timeframe for remediation.
 - **OWASP Secure Code Review**
 
@@ -1366,16 +1366,16 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 - Methods of Session Management:
 
   - **User Authentication**
-    `<br/>`
+    <br/>
     Common for a user to provide authentication credentials from the login page and then the authentication information is passed between server and client to maintain the session
   - **HTML Hidden Field**
-    `<br/>`
+    <br/>
     A unique hidden field in the HTML and when user starts navigating, we can set its value unique to the user and keep track of the session
   - **URL Rewriting**
-    `<br/>`
+    <br/>
     A session identifier parameter is appended to every request and response to keep track of the session
   - **Cookies**
-    `<br/>`
+    <br/>
     Cookies are small piece of information that are sent by the web server in the response header and gets stored in the browser cookies. When client make further request, it adds the cookie to the request header to keep track of the session
 
 - **Federated Identity**
@@ -1396,18 +1396,22 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 
 - **Java Session Management (Cookies)**
   ![Java Session Management](image/README/Java%20Session%20Management.PNG)
+
 - **Java Session Management (HTTPSession)**
-- Servlet API provides Session management through HttpSession interface. We can get session from HttpServletRequest object using following methods. HttpSession allows us to set objects as attributes that can be retrieved in future requests.
+
+  - Servlet API provides Session management through HttpSession interface. We can get session from HttpServletRequest object using following methods. HttpSession allows us to set objects as attributes that can be retrieved in future requests.
 
   - HttpSession getSession()
-    `<br/>`
+    <br/>
     This method always returns a HttpSession object. It returns the session object attached with the request, if the request has no session attached, then it creates a new session and return it
   - HttpSession getSession(boolean flag)
-    `<br/>`
+    <br/>
     This method returns HttpSession object if request has session else it returns null
 
-- When HttpServletRequest getSession() does not return an active session, then it creates the new HttpSession object and adds a Cookie to the response obejct with name JSESSIONID and value as session id
-- This cookie is used to identify the HttpSession object in further requests from client
+  - When HttpServletRequest getSession() does not return an active session, then it creates the new HttpSession object and adds a Cookie to the response obejct with name JSESSIONID and value as session id
+
+  - This cookie is used to identify the HttpSession object in further requests from client
+
 - **Java Session Management (URL Rewrite)**
 
   - There may be times where the browser has cookies disabled
@@ -1417,9 +1421,10 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
   - **However**: there is a clear security concern with the session in the URL
 
 - **.NET Sessions Management**
-  `<br/>`
+  <br/>
   ![.NET Session Management](image/README/.NET%20Session%20Management.PNG)
-- .NET session state supports several different storage options for session data. Each option is identified by a value in the SessionStateMode enumeration. The following list describes the available session state modes:
+
+  - .NET session state supports several different storage options for session data. Each option is identified by a value in the SessionStateMode enumeration. The following list describes the available session state modes:
 
   - You can specify which mode you want .NET session state to use by assigning a SessionStateMode enumeration values to the **mode** attribute of the sessionState element in your application's Web.config file. Modes other than **InProc** and **Off** require additional parameters, such as connection-string values
   - **InProc** mode, which stores session state in memory on the Web server. This is the default
@@ -1485,65 +1490,65 @@ https://jwt.io/
 - **Use Cases**
 
   - **Authorization**
-    `<br/>`
+    <br/>
     This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token
   - **Information Exchange**
-    `<br/>`
+    <br/>
     JSON Web Tokens are a good way of securely transmitting information between parties
 
     - Signed tokens - confirm senders are who they say they are
     - Hashed - verified that the content has not been tampered with
 
 - **How it works**
-  `<br/>`
+  <br/>
   In authentication, when the user successfully logs in using his credentials, a JSON Web Token will be returned and must be saved locally instead of the traditional approach of creating a session in the server and returning a cookie
-  `<br/>`
+  <br/>
   Whenever the user wants to access a protected route, it should send the JWT, typically in the Authorization header using the Bearer schema
-  `<br/>`
+  <br/>
   This is a stateless authentication mechanism as the user state is never saved in the server memory. The server's protected routes will check for a valid JWT in the Authorization header, and if there is, the user will be allowed
-  `<br/>`
+  <br/>
   As JWTs are self-contained, all the necessary information is there, reducing the need of going back and forward to the database
-  `<br/>`
+  <br/>
   ![JWT](image/README/JWT.PNG)
 - **Structure**
-  `<br/>`
+  <br/>
   In its compact form, JSON Web Token consist of three parts separated by dots(.) which are:
 
   - **Header**
-    `<br/>`
+    <br/>
     The header typically consists of two parts: the type of token (JWT) and the hashing algorithm being used (such as HMAC, SHA256 or RSA)
 
     - Example
-      `<br/>`
+      <br/>
       ![JWT (Header)](<image/README/JWT%20(Header).PNG>)
 
   - **Payload**
-    `<br/>`
+    <br/>
     The second part of the token is the payload, which contains the claims. **Claims are statements about an entity** (typically, the user) and additional data. There are three types of claims:
 
     - **Registered claims**
-      `<br/>`
+      <br/>
       These are a set of predefined claims which are not mandatory but recommended, to provide a set of useful, interoperable claims. Some of them are: iss(issuer), exp (expiration time), sub (subject), aud (audience) and others
     - **Public claims**
-      `<br/>`
+      <br/>
       These can be defined at will by those using JWTs. But to avoid collisions they should be defined in the IANA JSON Web Token Registry or be defined as a URI that contains a collision resistant namespace
     - **Private claims**
-      `<br/>`
+      <br/>
       These can the custom claims created to share information between parties that agree on using them and are neither registered or public claims
     - Example
-      `<br/>`
+      <br/>
       ![JWT (Payload)](<image/README/JWT%20(Payload).PNG>)
 
   - **Signature**
-    `<br/>`
+    <br/>
     To create the signature part, you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that
 
     - Example
-      `<br/>`
+      <br/>
       ![JWT (Signature)](<image/README/JWT%20(Signature).PNG>)
 
 Therefore, a JWT typically looks like the following.
-`<br/>`
+<br/>
 (xxxxx.yyyyy.zzzzz)
 
 ### OAuth
@@ -1592,35 +1597,35 @@ https://oauth.net/
   https://openid.net/
 
   OpenID allows you to use an existing account to sign into multiple websites, without needing to create new passwords
-  `<br/><br/>`
+  <br/><br/>
   You may choose to associate information with your OpenID that can be shared with the websites you visit, such as a name or email address
-  `<br/><br/>`
+  <br/><br/>
   With OpenID, your password is only given to your identity provider, and that provider then confirms your identity to the websites you visit. Other than your provider, no website ever sees your password
 
 - **OpenID Authentication**
   The end-user interacts with a relying party (such as website) that provides an option to specify an OpenID for purposes of authentication
-  `<br/><br/>`
+  <br/><br/>
   The relying party and the OpenID provider establish a shared secret, which the relying party then stores
-  `<br/><br/>`
+  <br/><br/>
   The relying party redirects the end-user's user-agent to the OpenID provider so the end-user can authenticate directly with the OpenID provider
-  `<br/><br/>`
+  <br/><br/>
   If the end-user accepts the OpenID provider's request to trust the relying party, then the user-agent is redirected back to the relying party
 
 ![OpenID Authentication](image/README/OpenID%20Authentication.PNG)
 
 - **OAuth and OpenID Connect**
   OAuth is directly related to OpenID Connect (OIDC) since OIDC is an authentication layer built on top of OAuth 2.0. OAuth is also distinct from XACML, which is an authentication policy standard
-  `<br/><br/>`
+  <br/><br/>
   OAuth can be used in conjunction with XACML where OAuth is used for ownership consent and access delegation whereas XACML is used to define the authorization policies (e.g. managers can view documents in their region)
 - **OpenID Connect**
   https://developers.google.com/identity/protocols/oauth2/openid-connect
 
   OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol
-  `<br/><br/>`
+  <br/><br/>
   It allows Clients to verify the identity of the End-User based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the End-User in an interoperable and REST-like manner
-  `<br/><br/>`
+  <br/><br/>
   OpenID Connect allows clients of all types, including Web-based, mobile and JavaScript clients, to request and receive information about authenicated sessions and end-users
-  `<br/><br/>`
+  <br/><br/>
   The specification suite is extensible, allowing participants to use optional features such as encryption of identity data, discovery of OpenID Providers, and session management, when it makes sense for them
 
   ![OpenID Connect](image/README/OpenID%20Connect.PNG)
@@ -1644,19 +1649,19 @@ https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
   ![Risk Rating Method](image/README/Risk%20Rating%20Method.PNG)
 
   **1. Identify a risk**
-  `<br/>`
+  <br/>
   The first step is to identify a security risk that needs to be rated. The tester needs to gather information about the threat agent involved, the attack that will be used, the vulnerability involved, and the impact of a successful exploit on the business
 
   **2. Estimating Likelihood**
-  `<br/>`
+  <br/>
   Once the tester has identified a potential risk and wants to figure out how serious it is, the first step is to estimate the "likelihood". At the highest level, this is a rough measure of how likely this vulnerability is to be uncovered and exploited by an attacker
-  `<br/><br/>`
+  <br/><br/>
   Here you are using the **Threat Agent Factors** and **Vulnerability Factors**
 
   - Factors
 
     - **Threat agent**
-      `<br/>`
+      <br/>
       The goal here is to estimate the likelihood of a successful attack by this group of threat agents. Use the worst-case threat agent
 
       - Skill Level (How technically skilled is this group of threat agents?)
@@ -1665,7 +1670,7 @@ https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
       - Size (How large is this group of threat agents?)
 
     - **Vulnerability**
-      `<br/>`
+      <br/>
       The goal here is to estimate the likelihood of the particular vulnerability involved being discovered and exploited. Assume the threat agent selected above.
 
       - Ease of Discovery (How easy is it for this group of threat agents to discover this vulnerability?)
@@ -1674,13 +1679,13 @@ https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
       - Intrusion Detection (How likely is an exploit to be detected?)
 
   **3. Estimating Impact**
-  `<br/>`
+  <br/>
   When considering the impact of a successful attack, it is important to realize that there are two kinds of impacts. The first is the "**technical impact**" on the application, the data it uses, and the functions it provides. The other is the "**business impact**" on the business and company operating the application
 
   - Factors
 
     - **Technical Impact**
-      `<br/>`
+      <br/>
       Technical impact can be broken down into factors aligned with the traditonal security areas of concern: confidentiality, integrity, availability and accountability. The goal is to estimate the magnitude of the impact **on the system** if the vulnerability were to be exploited
 
       - Loss of confidentiality (How much data could be disclosed and how sensitive is it?)
@@ -1689,7 +1694,7 @@ https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
       - Loss of accountability (Are the threat agents' actions traceable to an individual?)
 
     - **Business Impact**
-      `<br/>`
+      <br/>
       Business impact stems from the technical impact but requires a deep understanding of **what is important to the company running the application**. In general, you should be aiming to support your risks with business impact, particularly if your audience is executive level. The business risk is what justifies investment in fixing security problems
 
       - Financial damage (How much financial damage will result from an exploit?)
@@ -1698,14 +1703,14 @@ https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
       - Privacy violation (How much personally identifiable information could be disclosed?)
 
   **4. Determine the severity of the risk**
-  `<br/>`
+  <br/>
   In this step the likelihood estimate and the impact estimate are put together to calculate an overall severity for this risk. This is done by figuring out whether the likelihood is low, medium or high and then do the same for impact
 
   - **Informal**
-    `<br/>`
+    <br/>
     In many environments, there is nothing wrong with reviewing the factors and simply capturing the answers. The tester should think through the factors and identify the key "driving" factors that are controlling the result
   - **Repeatable**
-    `<br/>`
+    <br/>
     If it is necessary to defend the ratings or make them repeatable, then it is necessary to go through a more formal process of rating the factors and calculating the result
   - Sample
     ![Determine severity of risk](image/README/Determine%20severity%20of%20risk.PNG)
@@ -1713,24 +1718,24 @@ https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
   ![Determine severity of risk (2)](<image/README/Determine%20severity%20of%20risk%20(2).PNG>)
 
   **5. Deciding what to fix**
-  `<br/>`
+  <br/>
   After the risks to the application have been classified, there will be a prioritized list of what to fix. As a general rules, the most severe risks should be fixed first. It simply does not help the overall risk profile to fix less important risks, even if they are easy or cheap to fix
-  `<br/><br/>`
+  <br/><br/>
   Remember that not all risks are worth fixing, and some loss is not only expected, but justifiable based upon the cost of fixing the issue. For example, if it would cost $100,000 to implement controls to stem $2,000 fraud per year, it would take 50 years return on investment to stamp out the loss. But remember there may be reputation damage from the fraud that could cost the organisation much more
 
   - **Handling risk**
 
     - **Accept**
-      `<br/>`
+      <br/>
       Document the risk, acknowledge it and assign ownership
     - **Avoid**
-      `<br/>`
+      <br/>
       Place other controls that will reduce or eliminate the risk
     - **Mitigate**
-      `<br/>`
+      <br/>
       Fix the issue that exposes you to risk
     - **Transfer**
-      `<br/>`
+      <br/>
       If you are practically unable to deal with a risk, you may contractually obligate someone else to accept the risk
 
   - **Threat Mitigation Examples**
@@ -2076,6 +2081,8 @@ Threat modeling is an investigative technique for identifying application securi
 **Example**
 ![Microsoft Threat Modeling Tool](image/README/Microsoft%20Threat%20Modeling%20Tool.png)
 
+<hr/>
+
 ## Encryption and Hashing
 
 ### Encryption
@@ -2130,57 +2137,54 @@ Threat modeling is an investigative technique for identifying application securi
 
 ### Encryption Use Cases
 
-1. Use Case 1: HTTPS - Encryption
-   <br/>
-   ![HTTPS Encryption](image/README/HTTPS%20Encryption.png)
-   <br/>
-   Most websites today are using HTTPS. This is basically a way to encrypt the connection between your browser and the server. For instance, maybe you are going to Amazon/Facebook/Google, your browser will be able to encrypt that traffic that is going to the server.
-   <br/>
-   So one of the primary components of this HTTPS is certificates. Certificates are a way for a third party to vouch for the owner of a private key. And basically that means that a server with private and public key pairs, with asymmetric encryption, a server will get a private and public keeper and they will go out to a third party (entrust data card) The server or the owner of the server will go out to a third party and get a certificate. The certificate is signed. Therefore, it vouches for the servers ownership of that private key (that certificate is then used to pass out publicly - public key [the other half of that asymmetric key])
-   <br/>
-   The certificate is then used by browser. When it goes to Amazon/Facebook/Google, the browser will have the entrust data card certificate in its rolodex of certificates, and therefore, it knows that it will trust the server owns the private key.
-   <br/>
-   Public key: embedded within certificate
-   <br/>
-   Private key: stay private on the server
-   <br/>
-   Asymmetric encryption allows the client/browser to encrypt any of the traffic going to the server and server is the only one that can decrypt it because it is the only one that has the private key.
+- **1. Use Case 1: HTTPS - Encryption**
+  <br/>
+  ![HTTPS Encryption](image/README/HTTPS%20Encryption.png)
+  <br/>
+  Most websites today are using HTTPS. This is basically a way to encrypt the connection between your browser and the server. For instance, maybe you are going to Amazon/Facebook/Google, your browser will be able to encrypt that traffic that is going to the server.
+  <br/>
+  So one of the primary components of this HTTPS is certificates. Certificates are a way for a third party to vouch for the owner of a private key. And basically that means that a server with private and public key pairs, with asymmetric encryption, a server will get a private and public keeper and they will go out to a third party (entrust data card) The server or the owner of the server will go out to a third party and get a certificate. The certificate is signed. Therefore, it vouches for the servers ownership of that private key (that certificate is then used to pass out publicly - public key [the other half of that asymmetric key])
+  <br/>
+  The certificate is then used by browser. When it goes to Amazon/Facebook/Google, the browser will have the entrust data card certificate in its rolodex of certificates, and therefore, it knows that it will trust the server owns the private key.
+  <br/>
+  Public key: embedded within certificate
+  <br/>
+  Private key: stay private on the server
+  <br/>
+  Asymmetric encryption allows the client/browser to encrypt any of the traffic going to the server and server is the only one that can decrypt it because it is the only one that has the private key.
 
-2. Use Case 2: Digital Signatures
-   <br/>
-   ![Signing Encryption](image/README/Signing%20Encryption.png)
-   <br/>
-3. You have a document - Medical Record
-   <br/>
-4. You hash that document to fixed size gibberish
-   <br/>
-5. The gibberish is the fingerprint of the document
-   <br/>
-6. Use your private key you sign the fingerprint
-   <br/>
-7. This produces the digital signature of the document
-   <br/>
-8. Append this signature to the document
-   <br/>
-   You are going to hash the document so it is going to be gibberish (not the same document - fingerprint/checksum/fixed size of gibberish) You use your private key to sign that output from the hash. This produces a digital signature of the document. So because you used your private key to sign, you are the only one that has ownership of that privacy and therefore you are the only own that could have signed that document.
-   <br/>
-   To create the digital signature, you penned this to the document and this provides digital signature to that document. So if you want to verify that document first, you would take the public key and decrypt it to get the hash (only private key could have encrypted it) And if those two hashes match, that means that the document has not been modified (provides you both integrity and repudiation)
+- **2. Use Case 2: Digital Signatures**
+  <br/>
+  ![Signing Encryption](image/README/Signing%20Encryption.png)
 
-9. Use Case 3: Signing with Security
-   <br/>
-   ![Signing with Security](image/README/Signing%20with%20Security.png)
-   <br/>
-   Alice is the one that created the document which is going to send it over to Bob.
-10. Alice has a document
-11. Alice is going to hash the document and create fingerprint
-12. With her private key, she is going to sign that fingerprint and create a digital signature (provides authentication)
-13. She takes a symmetric key and encrypt the document
-14. She is going to take Bob's public key to encrypt that symmetric key (provides security)
-15. She then send both the encrypted document and symmetric key over to Bob
-16. Bob is able to take his private key and decrypt that symmetric key
-17. Once he has that symmetric key decrypted, he can then decrypt the encrypted document
-18. With Alice's public key, Bob is able to verify by decrypting that digital signature
-19. He hashes that decrypted document with a symmetric key and if two of those matched, then he knows that the document has not been tampered with (provides integrity) And if Alice wants to get verification, she will ask Bob to sign what he hash with his private key and send back over to Alice. Alice uses Bob's public key to decrypt that digital signature and gets the fingerprint of the document that Bob actually hashed. And if that matches to her original, then we know that there is verification that Bob received it
+  - 1. You have a document - Medical Record
+  - 2. You hash that document to fixed size gibberish
+  - 3. The gibberish is the fingerprint of the document
+  - 4. Use your private key you sign the fingerprint
+  - 5. This produces the digital signature of the document
+  - 6. Append this signature to the document
+
+  <br/>
+  You are going to hash the document so it is going to be gibberish (not the same document - fingerprint/checksum/fixed size of gibberish) You use your private key to sign that output from the hash. This produces a digital signature of the document. So because you used your private key to sign, you are the only one that has ownership of that privacy and therefore you are the only own that could have signed that document.
+  <br/>
+  To create the digital signature, you penned this to the document and this provides digital signature to that document. So if you want to verify that document first, you would take the public key and decrypt it to get the hash (only private key could have encrypted it) And if those two hashes match, that means that the document has not been modified (provides you both integrity and repudiation)
+
+- **3. Use Case 3: Signing with Security**
+  <br/>
+  ![Signing with Security](image/README/Signing%20with%20Security.png)
+  <br/>
+  Alice is the one that created the document which is going to send it over to Bob.
+
+  - 1. Alice has a document
+  - 2. Alice is going to hash the document and create fingerprint
+  - 3. With her private key, she is going to sign that fingerprint and create a digital signature (provides authentication)
+  - 4. She takes a symmetric key and encrypt the document
+  - 5. She is going to take Bob's public key to encrypt that symmetric key (provides security)
+  - 6. She then send both the encrypted document and symmetric key over to Bob
+  - 7. Bob is able to take his private key and decrypt that symmetric key
+  - 8. Once he has that symmetric key decrypted, he can then decrypt the encrypted document
+  - 9. With Alice's public key, Bob is able to verify by decrypting that digital signature
+  - 10. He hashes that decrypted document with a symmetric key and if two of those matched, then he knows that the document has not been tampered with (provides integrity) And if Alice wants to get verification, she will ask Bob to sign what he hash with his private key and send back over to Alice. Alice uses Bob's public key to decrypt that digital signature and gets the fingerprint of the document that Bob actually hashed. And if that matches to her original, then we know that there is verification that Bob received it
 
 - **Key Management**
   - The algorithms that encrypt the data are all the same (what makes it secure is the keys)
@@ -2313,3 +2317,48 @@ Threat modeling is an investigative technique for identifying application securi
   - Password entropy is based on the character set used (which is expansible by using lowercase, uppercase, numbers as well as symbols) as well as password length
   - Password entropy predicts how difficult a given password would be to crack through guessing, brute force cracking, dictionary attacks or other common methods
   - Note: Encryption creates randomness which cannot be compressed as well. For maximum efficiency you should compress before encrypting
+
+<hr/>
+
+## Frameworks and Process
+
+### Health Insurance Portability and Accountability Act (HIPAA)
+
+- **Data Classification**
+
+  - Restricted (Highly sensitive information)
+  - Confidential (Sensitive information)
+  - Internal (Non-sensitive information that is not released to the public)
+  - Public (Information has been approved for public access)
+
+- **Types of Data**
+  ![Types of Data](image/README/Types%20of%20Data.png)
+
+- **Overview of HIPAA**
+
+  - Signed in 1996, HIPAA (Health Insurance Portability and Accountability Act) aimed to:
+    - Modernize the flow of healthcare information
+    - Provide protection of PII (Personally Identifiable Information)
+    - Address limitations on healthcare insurance coverage
+
+- **HIPAA Titles**
+  - Title I - Health Care Access, Portability and Renewability
+  - **Title II - Preventing Healthcare Fraud and Abuse; Administrative Simplification; Medical Liability Reform**
+    <br/>
+    ![Title II](image/README/Title%20II%20of%20HIPAA.png)
+  - Title III - Tax-related health provisions governing medicial savings accounts
+  - Title IV - Application and enforcement of group health insurance requirements
+  - Title V - Revenue offset governing tax deductions for employers
+
+- **What is PHI**
+  ![PHI](image/README/PHI.png)
+
+- **Privacy in HIPAA**
+  - With respect to health information, **privacy** is defined as the right of an individual to keep his/her individual health information from being disclosed. This is typically achieved through policy and procedure
+    - Privacy encompasses controlling who is authorized to access patient information; and under what conditions patient information may be accessed, used and/or disclosed to a third party
+
+  ![HIPAA Violation Penalties](image/README/HIPAA%20Violation%20Penalties.png)
+
+- **The Health Information Technology for Economic and Clinical Health Act (HITECH Act)**
+  ![HITECH ](image/README/HITECH%20Act.png)
+  
