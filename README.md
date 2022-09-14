@@ -2602,6 +2602,7 @@ Threat modeling is an investigative technique for identifying application securi
       Reverse proxy deployments accept traffic on the virtual IP address and proxy the traffic to the back-end server network behind the Web Application Firewall
 
   <br/>
+
   ![WAF](image/README/WAF.PNG)
 
 - **Strengths**
