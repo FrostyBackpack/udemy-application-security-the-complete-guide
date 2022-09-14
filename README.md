@@ -2462,7 +2462,7 @@ Threat modeling is an investigative technique for identifying application securi
 
   - Sample
   <br/>
-  ![Abuse/Misuse](image/README/Abuse%20or%20Misuse.PNG)
+  ![Abuse or Misuse](image/README/Abuse%20or%20Misuse.PNG)
 
 <hr/>
 
@@ -2471,4 +2471,243 @@ Threat modeling is an investigative technique for identifying application securi
 ## Static Application Security Testing (SAST)
 - **Security Analysis**
   - **General Guidance**
-    - Most enterprises use many (even all) ...
+    - Most enterprises use many (even all) of the techniques outlined here
+    - Not each solution is a silver bullet
+    - Many solutions are platform or language dependent
+      - This means that if you are using multiple platform or languages you will need more than one tool (very few enterprises are monolithic)
+    - Results are different in each solution and there are many false positives
+    - You may be mandated by your environment to run tools
+      - Government, financial, healthcare, etc.
+    - Every vendor will tell you their solution fits your needs
+      - They tell you your problem, then sell you their solution
+    <br/>
+    False positive - A finding in a tool or through some other technique that turns out to not be a viable finding 
+    <br/>
+    Example: Tools that claim there is a password in clear text when it simply found the word "password" in the code
+    <br/><br/>
+    False negative - A vulnerability that is able to get past a scanning tool or other technique that is looking for vulnerabilities
+    <br/>
+    Example: A SQL injection vulnerability that is not identified by a scanning tool
+- **Static Analysis**
+  - **How static Analysis works**
+    - Static Code Analysis commonly refers to the running of Static Code Analysis tools that attempt to highlight possible vulnerabilities within "static" (non-running) source code by using techniques such as Taint Analysis and Data Flow Analaysis
+    - Most static analysis tools are used as an aid for an analyst to help zero in on security relevant portions of code so they can find flaws more efficiently, rather than a tool that simply finds flaws automatically
+
+  - **Taint and Lexical Analysis**
+    - Taint Analysis attempts to identify variables that have been "tainted" with user controllable input and traces them to possible vulnerable functions also known as a "sink". If the tainted variable gets passed to a sink without first being sanitized it is flagged as a vulnerability
+    - Lexical Analysis converts source code syntax into "tokens" of information in an attempt to abstract the source code and make it easier to manipulate
+
+  <br/>
+  ![SAST](image/README/SAST.PNG)
+
+- **Strengths**
+  - Helps in identifying the flaws in code
+  - The testing is conducted by trained software developers with good knowledge of coding
+  - It is fast and easy way to find and fix the errors
+  - With automated tools, it becomes quite fast to scan and review the software
+  - The use of Automated tools provides mitigation recommendations
+  - With static testing it is possible to find errors at an early stage of development life cycle, thus, in turn reduces the cost of fixing
+
+- **Weakness**
+  - Demand great amount of time when done manually
+  - Automated tools works with few programming languages
+  - Automated tools may provide false positives and false negatives
+  - Automated tools only scan the code
+  - Automated tools cannot pinpoint weak points that may create trouble in run-time
+
+- **Static Analysis Tools**
+  ![Static Analysis Tools](image/README/Static%20Analysis%20Tools.PNG)
+
+### Dynamic Application Security Testing (DAST)
+- **Dynamic Application Security Testing (DAST)**
+  - DAST is a black-box security testing methodology in which an application is tested from the outside in by examining an application in its running state and trying to attack it just like an attacker would
+    - DAST scanners are for the most part, technology independent. This is because DAST scanners interact with an application from the outside-in and rely on HTTP as a common language across a myriad of programming languages, off-the-shelf and even custom-built frameworks
+
+- **Strengths**
+  - Not as technology dependent
+  - Can be run in production
+  - Not as many false positives
+  - Can test software that you do not own
+  - Can be used to enhance penetration testing
+
+- **Weakness**
+  - Cannot locate the line of code
+  - Findings are later in the SDLC - Although you can do dynamic scanning earlier
+  - Does not locate code specific security issues (e.g. hard coded passwords)
+  - Findings still need to be verified by a subject matter expert
+
+- **DAST Tools**
+  ![DAST Tools](image/README/DAST%20Tools.PNG)
+
+### Interactive Application Security Testing (IAST)
+- **Interactive Application Security Testing (IAST)**
+  - Assesses applications from within using software instrumentation
+  - This technique allows IAST to combine the strengths of both SAST and DAST methods as well as providing access to code, HTTP traffic, library information, backend connections and configuration information
+  - Some IAST products require the application to be attacked, while others can be used during normal quality assurance testing
+
+- **Strengths**
+  - Agents - installing agents mean that there is continuous monitoring that is always active
+  - Works well in the DevOps (or DevSecOps) model
+  - Lower cases of false positives since it can "see" active attacks and not potential ones
+  - Can have a targeted approach to defining the security scope
+
+- **Weakness**
+  - Agents - In the real world, agents are resisted because the owners of systems are not always sure of what the agent is doing
+  - Instrumentation means possibly development and deployment work in order to take advantage of the benefits
+  - Many of them only work wehen they "see" something. In other words, you need to exercise a workflow in order for it to be picked up
+  - Steep learning curve for deployment and reviewing the results since it does not point to the line of code (see dynamic analysis)
+
+- **IAST Tools**
+  ![IAST Tools](image/README/IAST%20Tools.PNG)
+
+### Run-Time Application Security Protection (RASP)
+- **Run-Time Application Security Protection (RASP)**
+  - Is a security technology that uses runtime instrumentation to detect and block computer attacks by taking advantage of information from inside the running software
+  - RASP technology can improve the security of software by monitoring its inputs, and blocking those that could allow attacks, while protecting the runtime environment from unwanted changes and tampering
+  - RASP can prevent, exploitation and possibly take other actions, including terminating a user's session, shutting the application down, alerting security personnel and sending a warning to the user
+
+- **Strengths**
+  - Can be configured to block or monitor
+  - Can block attacks as they happen
+  - Since this is similar to DAST and IAST (in fact this commonly referred to as a combination of both) see the strengths listed in those tools
+
+- **Weakness**
+  - Needs to see an attack as it happens (see IAST)
+  - Potential to block legitimate traffic
+  - Someone (or some group) needs to own the rules that define what is blocked
+  - Since this is similar to DAST and IAST (in fact this is commonly referred to as a combination of both) see weaknesses listed in those tools
+
+- **RASP Tools**
+  ![RASP Tools](image/README/RASP%20Tools.PNG)
+
+### Web Application FireWall (WAF)
+- **Web Application FireWall (WAF)**
+  - Is an application firewall for HTTP applications. It applies a set of rules to an HTTP conversation. Generally these rules cover common attacks such as cross-site scripting (XSS) and SQL injection
+  - It is deployed in front of web applications and analyzes bi-directional web-based (HTTP) traffic - detecting and blocking anything malicious
+  - This functionality can be implemented in software or hardware, running in an appliance device, or in a typical server running a common operating system
+  - WAFs may come in the form of an appliance, server plugin, or filter, and may be customized to an application
+  - Note: WAF's can sometimes be considered an ASM (Application Security Manager)
+
+- **WAF Deployment**
+  - Although the names for operating mode may differ, WAFs are basically deployed inline as:
+    - **Transparent bridge**
+      <br/>
+      It inspects only the traffic that is configured for inspection while bridging all other traffic. Bridge mode deployment can be achieved with no changes to the network configuration of the upstream devices or web servers
+
+    - **Reverse proxy**
+      <br/>
+      Reverse proxy deployments accept traffic on the virtual IP address and proxy the traffic to the back-end server network behind the Web Application Firewall
+
+  <br/>
+  ![WAF](image/README/WAF.PNG)
+
+- **Strengths**
+  - Can be in blocking or reporting mode
+  - Can be independent of the application
+  - Can block the following: 
+    - Cross-site Scripting (XSS)
+    - SQL injection
+    - Cookie poisoning
+    - Unvalidated input
+    - DoS
+    - Web Scripting
+
+- **Weakness**
+  - Potential performance issues
+  - Not actually solving the problems
+  - Cannot protect against every security issue
+
+- **Types of WAF's**
+  - **Network Based**
+    - Pro: **Low network latency** since they are connected directly to the web servers
+    - Con: Higher Cost and Tougher Management across large DCs
+  - **Host Based**
+    - Pro: Affordable. No network latency
+    - Con: Agents. Engineering costs/time. Can create complexity with application
+  - **Cloud Based**
+    - Pro: Cheapest. Auto update/maintained. Quick to deploy
+    - Con: High network latency. No ownership
+
+### Penetration Testing
+- **Types**
+  - **White Box**
+    <br/>
+    Provides information about the system to the tester. This can include code, credentials, network maps and other system information
+
+  - **Black Box**
+    <br/>
+    Provides little to no system information. This resembles a typical attack where the information that can be gathered is generally only public information
+
+  - **Grey Box**
+    <br/>
+    The in-between state. Some information but possibly limited to just essential information
+
+  - **Internal**
+    <br/>
+    A team that is employed at the target company. This is a team/group that has other duties at the company, but is engaged for a period of time to target a specific system/application
+
+  - **External**
+    <br/>
+    An external party that is engaged to test the system/application. Scope is defined and the party is given a timeframe for completion
+
+- **Strengths**
+  - Findings are typically true findings that are actionable 
+  - Can be scoped to specific areas and time
+  - Can be used in combination with other security methods
+    - Findings in threat model of scan tools can be verified
+
+- **Weakness**
+  - Not usually a full system test, typically very targeted
+  - Can be expensive and time consuming
+  - Findings need to be secured, especially when a 3rd party is involved in the testing
+
+### Software Composition Analysis (SCA)
+- **Software Composition Analysis (SCA)**
+  - SCA is the process of validating that the components, libraries, and opensource software that is used in an application is free from known vulnerabilities and license compliance
+  - These external software components can come from several places:
+    - Downloads
+    - Commerical applications
+    - Third party libraries and software
+    - From outsourced development by consulting
+
+  - SCA can provide:
+    - Component tracking and inventory
+    - Vulnerability identification and remediation recommendation
+    - License management
+
+  <br/>
+  ![SCA](image/README/SCA.PNG)
+
+- **Dependency Check**
+
+  - .NET and Java compatible, Dependency Check is used to scan libraries used as build dependencies during the build process
+  - Dependencies are matched against the NVD (National Vulnerability Database) to determine whether the dependency being used is vulnerable
+  - A report is generated and can be used to identify the dependencies as well as understand the mitigation (In mos t cases, the mitigation is to use the most up to date level of software)
+
+- **National Vulnerability Database**
+  https://nvd.nist.gov/
+
+  - The NVD is the U.S government repository of standards based vulnerability mmanagement data represented using Security Content Automation Protocol (SCAP) This data enables automation of vulnerability management, security measurement, and compliance
+  - The NVD includes databases of security checklist references, security related software flaws, misconfigurations, product names and impact metrics
+
+  ![NVD](image/README/NVD.PNG)
+
+  - **Sample**
+    ![Dependency Check](image/README/Dependency%20Check.PNG)
+  - **JFrog Xray**
+    ![JFrog](image/README/JFrog.PNG)
+    ![JFrog Xray](image/README/JFrog%20Xray.PNG)
+
+## Conclusion
+
+### Secure Design and Coding
+<br/>
+![Secure Design and Coding](image/README/Secure%20Design%20and%20Coding.PNG)
+
+### Secure Testing
+<br/>
+![Secure Testing](image/README/Secure%20Testing.PNG)
+
+### Remember the Basics
+<br/>
+![Remember the Basics](image/README/Basics.PNG)
