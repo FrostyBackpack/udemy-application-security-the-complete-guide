@@ -2462,8 +2462,8 @@ Threat modeling is an investigative technique for identifying application securi
   - An abuse case is a type of complete interaction between a system and one or more actors, where the results of the interaction are harmful to the system, one of the actors, or one of the stakeholders in the system
 
   - Sample
-  <br/>
-  ![Abuse or Misuse](image/README/Abuse%20or%20Misuse.PNG)
+    <br/>
+    ![Abuse or Misuse](image/README/Abuse%20or%20Misuse.PNG)
 
 <hr/>
 
@@ -2707,16 +2707,10 @@ Threat modeling is an investigative technique for identifying application securi
 ## Conclusion
 
 ### Secure Design and Coding
-<br/>
-
 ![Secure Design and Coding](image/README/Secure%20Design%20and%20Coding.PNG)
 
 ### Secure Testing
-<br/>
-
 ![Secure Testing](image/README/Secure%20Testing.PNG)
 
 ### Remember the Basics
-<br/>
-
 ![Remember the Basics](image/README/Basics.PNG)
