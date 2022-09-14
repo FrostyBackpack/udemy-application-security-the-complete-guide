@@ -2362,3 +2362,113 @@ Threat modeling is an investigative technique for identifying application securi
 - **The Health Information Technology for Economic and Clinical Health Act (HITECH Act)**
   ![HITECH ](image/README/HITECH%20Act.png)
   
+  - Built on HIPAA and ensured entities were complying with HIPAA Rules and that notifications were sent to affected individuals when health information was compromised
+  - Tougher penalties for HIPAA compliance failures were introduced to incentivize entities to comply with the HIPAA Privacy and Security Rules
+  - Transitioning to electronic records was expensive. The Act introduced incentives to encourage hospitals and other healthcare providers to make the change
+  - Increase HER adoption from 3.2% in 2008 to 14.2% in 2015
+  - By 2017, 86% of office-based physicians had adopted an EHR and 96% of non-federal acute care hospitals has implemented certified health IT
+  - The Act did not make compliance with HIPAA mandatory as that was already a requirement, but it did make sure that entities found not to be in compliance could be issued with a substantial fine
+
+- **HITECH and HIPAA**
+  - HIPAA and HITECH were brough together in 2013 through the HIPAA Omnibus Final Rule
+  - The HITECH Act called for mandatory penalties for HIPAA-covered entities and business associates in cases where there were willful neglect of HIPAA Rules
+  - With such high potential fines (up to $1.5 million), HIPAA compliance could no longer be considered "optional". The penalties could be higher than the cost of complying with HIPAA
+  - The HITECH Act brought the new HIPAA Breach Notification Rule required entities to issue notifications to affected individuals within sixty days of the discovery of a breach of unsecured protected health information
+  - Both Acts address the security of electronic Protected Health Information (ePHI) However, prior to HITECH, patients were unable to find out who their ePHI had been disclosed to (both authorized and unauthorized where known) In 2011, a HITECH-required Rule allows patients to request access reports
+
+### Payment Card Industry Data Security Standard (PCI DSS)
+  - PCI
+    ![PCI](image/README/PCI.PNG)
+
+    - **Qualified Security Accessor (QSA)**
+      <br/>
+      A Qualified Security Assessor is a certificate that has been provided by the PCI Security Standards Council. This certified person can audit merchants for Payment Card Industry Data Security Standard (PCI DSS) compliance 
+
+    - **Report on Compliance (ROC)**
+      <br/>
+      A Report on Compliance is a form that has to be filled by all level 1 merchants undergoing a PCI DSS (Payment Card Industry Data Security Standard) audit. The ROC form is used to verify that the merchant being audited is compliant with the PCI DSS standard
+
+    - **Self-Assessment Questionnaire (SAQ)**
+      <br/>
+      The Self-Assessment Questionnaire is a set of Questionnaires documents that merchants are required to complete each and every year and submit to their transaction Bank
+
+    <br/>
+    Validation of compliance is performed annually, either by an external Qualified Security Assessor (QSA) or by a firm specific Internal Security Assessor that creates a Report on Compliance (ROC) for organizations handling large volumes of transactions, or by Self-Assessment Questionnaire (SAQ) for companies handling smaller volumes
+    <br/>
+    Compliance with PCI DSS is not required by federal law in United States. However, the laws of some U.S. states either refer to PCI DSS directly, or make equivalent provisions
+    <br/>
+    The PCI Data Security Standard specifies twelve requirements for compliance, organised into six logically related groups called "control objectives"
+
+    <br/>
+    ![PCI DSS](image/README/PCI%20DSS.PNG)
+
+### DEVOPS and CICD
+  - **CICD**
+    - **Continuous Integration (CI)**
+      - Automation that delivers software more frequently to an environment 
+      - Continuous Integration is a development practice that requires developers to integrate code into a shared repository several times a day. Each check-in is then verified by an automated build, allowing teams to detect problems early
+      <br/> 
+      ![CI](image/README/CI.PNG)
+      <br/>
+      ![CI (2)](image/README/CI%20(2).PNG)
+    - **Continuous Delivery/Deployment (CD)**
+      - **Continuous Deployment**
+        <br/>
+        The ability to get changes of all types into production, or into the hands of users, safely and quickly in a sustainable way
+      - **Continuous Delivery**
+        <br/>
+        The ability for a team to perform all integration tasks and make a production ready package ready and available
+      <br/>
+      The difference between continuous deployment and continuous delivery is that in continuous delivery, the package is not pushed to a production environment without manual intervention
+      <br/>
+      ![CD](image/README/CD.PNG)
+  
+  - **DEVOPS**
+    ![DEVOPS](image/README/DEVOPS.PNG)
+    <br/>
+    ![DEVOPS (2)](image/README/DEVOPS%20(2).PNG)
+
+### DEVSECOPS
+- **How do we inject security**
+  <br/>
+  ![How do we inject security](image/README/How%20do%20we%20inject%20security.PNG)
+  <br/>
+  ![Devsecops](image/README/Devsecops.PNG)
+
+- **DEVOPS vs DEVSECOPS Tools**
+  <br/>
+  ![Devops vs Devsecops](image/README/Devops%20vs%20Devsecops.PNG)
+  <br/>
+  Unit Test -> Integration Test -> System Test -> Manual Validation -> Deployment
+  <br/>
+  ![Devops vs Devsecops(2)](image/README/Devops%20vs%20Devsecops%20(2).PNG)
+
+- **Bottom Line**
+  - Test early, Test often
+  - Use the scanning tools available and scan smaller scopes
+  - DAST, RASP, IAST, WAF work better in a DEVOPS environment than SAST
+  - Constant feedback loop of communication
+  - Monitoring for vulnerabilities in the environment
+  - Monitoring external sources for vulnerabilities in 3rd parties
+
+### Abuse/Misuse cases
+- **Use Case**
+  - In software and systems engineering, a use case is a list of actions or event steps typically defining the interactions between an actor and a system to achieve a goal
+  - The actor can be a human or other external system
+  
+- **Abuse/Misuse case**
+  - A misuse case highlights something that should not happen (e.g. Negative Scenario) and the threats hence identified, help in defining new requirements, which are expressed as new Use Cases
+  - An abuse case is a type of complete interaction between a system and one or more actors, where the results of the interaction are harmful to the system, one of the actors, or one of the stakeholders in the system
+
+  - Sample
+  <br/>
+  ![Abuse/Misuse](image/README/Abuse%20or%20Misuse.PNG)
+
+<hr/>
+
+## Security Scanning and Testing
+
+## Static Application Security Testing (SAST)
+- **Security Analysis**
+  - **General Guidance**
+    - Most enterprises use many (even all) ...
