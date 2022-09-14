@@ -1194,6 +1194,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
   - A report is generated and can be used to identify the dependencies as well as understand the mitigation (In mos t cases, the mitigation is to use the most up to date level of software)
 
 - **National Vulnerability Database**
+  <br/>
   https://nvd.nist.gov/
 
   - The NVD is the U.S government repository of standards based vulnerability mmanagement data represented using Security Content Automation Protocol (SCAP) This data enables automation of vulnerability management, security measurement, and compliance
@@ -2558,6 +2559,7 @@ Threat modeling is an investigative technique for identifying application securi
   - Steep learning curve for deployment and reviewing the results since it does not point to the line of code (see dynamic analysis)
 
 - **IAST Tools**
+  <br/>
   ![IAST Tools](image/README/IAST%20Tools.PNG)
 
 ### Run-Time Application Security Protection (RASP)
@@ -2578,6 +2580,7 @@ Threat modeling is an investigative technique for identifying application securi
   - Since this is similar to DAST and IAST (in fact this is commonly referred to as a combination of both) see weaknesses listed in those tools
 
 - **RASP Tools**
+  <br/>
   ![RASP Tools](image/README/RASP%20Tools.PNG)
 
 ### Web Application FireWall (WAF)
@@ -2685,6 +2688,7 @@ Threat modeling is an investigative technique for identifying application securi
   - A report is generated and can be used to identify the dependencies as well as understand the mitigation (In mos t cases, the mitigation is to use the most up to date level of software)
 
 - **National Vulnerability Database**
+  <br/>
   https://nvd.nist.gov/
 
   - The NVD is the U.S government repository of standards based vulnerability mmanagement data represented using Security Content Automation Protocol (SCAP) This data enables automation of vulnerability management, security measurement, and compliance
@@ -2698,16 +2702,21 @@ Threat modeling is an investigative technique for identifying application securi
     ![JFrog](image/README/JFrog.PNG)
     ![JFrog Xray](image/README/JFrog%20Xray.PNG)
 
+<hr/>
+
 ## Conclusion
 
 ### Secure Design and Coding
 <br/>
+
 ![Secure Design and Coding](image/README/Secure%20Design%20and%20Coding.PNG)
 
 ### Secure Testing
 <br/>
+
 ![Secure Testing](image/README/Secure%20Testing.PNG)
 
 ### Remember the Basics
 <br/>
+
 ![Remember the Basics](image/README/Basics.PNG)
